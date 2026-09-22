@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Guideline — NGỌT Studio Consultancy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* ── LÕI KẾ THỪA TỪ NGHỀ NẶNG NGHỆ ── */
+    --ink:#0A0A0A;
+    --cream:#F5F0E8;
+    --gold:#C9A84C;
+    --gold-light:#E8C96A;
+    --gold-dark:#8C6D2A;
+    --warm-gray:#8A7F74;
+
+    /* ── ACCENT RIÊNG CỦA NSC ── */
+    --steel:#3A4A5C;
+    --steel-light:#6E8698;
+    --forest:#2A4A3A;
+    --surface:#12151A;
+    --surface-2:#1A1F26;
+
+    --line:rgba(201,168,76,.18);
+    --line-soft:rgba(245,240,232,.10);
+
+    --display:'Playfair Display',serif;
+    --body:'Be Vietnam Pro',sans-serif;
+    --mono:'DM Mono',monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:78px}
+  body{
+    background:var(--ink);color:var(--cream);
+    font-family:var(--body);font-size:15px;line-height:1.65;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold);color:var(--ink)}
+
+  /* ═══ NAV ═══ */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:200;
+    background:rgba(10,10,10,.94);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+    height:64px;display:flex;align-items:center;
+    padding:0 clamp(16px,4vw,40px);gap:20px;
+  }
+  .nav-brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+  .nav-brand svg{width:26px;height:26px;color:var(--gold)}
+  .nav-brand b{font-family:var(--display);font-size:17px;color:var(--cream);font-weight:700;letter-spacing:.02em}
+  .nav-brand span{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--warm-gray);text-transform:uppercase;display:block;margin-top:-2px}
+  .nav-scroll{margin-left:auto;display:flex;align-items:center;gap:5px;overflow-x:auto;scrollbar-width:none}
+  .nav-scroll::-webkit-scrollbar{display:none}
+  .nav-group{display:flex;align-items:center;gap:2px;padding:4px 7px;border-radius:2px}
+  .nav-group.g1{border:1px solid rgba(201,168,76,.25)}
+  .nav-group.g2{border:1px solid rgba(110,134,152,.3)}
+  .nav-group>i{font-family:var(--mono);font-style:normal;font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding-right:5px;white-space:nowrap}
+  .nav-group.g1>i{color:var(--gold)}
+  .nav-group.g2>i{color:var(--steel-light)}
+  .nav-scroll a{
+    font-size:10.5px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--warm-gray);text-decoration:none;padding:5px 7px;border-radius:2px;
+    transition:.2s;white-space:nowrap;
+  }
+  .nav-scroll a:hover{color:var(--cream);background:rgba(245,240,232,.06)}
+  .nav-scroll a.on{color:var(--gold)}
+  .nav-burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--gold);
+    font-family:var(--mono);font-size:10px;letter-spacing:.14em;padding:8px 12px;cursor:pointer;border-radius:2px}
+
+  /* ═══ LAYOUT ═══ */
+  section{padding:clamp(64px,9vw,110px) clamp(18px,5vw,60px);max-width:1240px;margin:0 auto;position:relative}
+  .rule{height:1px;max-width:1120px;margin:0 auto;
+    background:linear-gradient(90deg,transparent,var(--line) 25%,var(--line) 75%,transparent)}
+  .sec-tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:12px}
+  .sec-tag::after{content:'';flex:1;max-width:64px;height:1px;background:rgba(201,168,76,.4)}
+  .sec-tag.steel{color:var(--steel-light)}
+  .sec-tag.steel::after{background:rgba(110,134,152,.4)}
+  h2{font-family:var(--display);font-size:clamp(28px,3.4vw,46px);line-height:1.18;color:var(--cream)}
+  h2 em{color:var(--gold);font-style:italic}
+  h2 u{color:var(--steel-light);text-decoration:none;font-style:italic}
+  h3{font-family:var(--display);font-size:clamp(20px,2.2vw,28px);line-height:1.3;color:var(--cream);font-weight:700}
+  .sec-desc{color:var(--warm-gray);font-size:15.5px;margin-top:16px;max-width:620px}
+  .sec-head{margin-bottom:clamp(36px,5vw,60px)}
+  .kicker{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+
+  /* ═══ LAYER BANNER ═══ */
+  .layer-banner{
+    max-width:1240px;margin:0 auto;padding:0 clamp(18px,5vw,60px);
+  }
+  .layer-inner{
+    border:1px solid var(--line);border-left:3px solid var(--gold);
+    background:linear-gradient(90deg,rgba(201,168,76,.07),transparent 60%);
+    padding:22px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 26px;
+  }
+  .layer-inner.steel{border-left-color:var(--steel-light);
+    background:linear-gradient(90deg,rgba(110,134,152,.09),transparent 60%);border-color:rgba(110,134,152,.22)}
+  .layer-num{font-family:var(--display);font-size:38px;font-weight:900;color:var(--gold);line-height:1}
+  .layer-inner.steel .layer-num{color:var(--steel-light)}
+  .layer-txt strong{display:block;font-family:var(--display);font-size:21px;color:var(--cream);margin-bottom:3px}
+  .layer-txt span{font-size:13.5px;color:var(--warm-gray)}
+  .layer-for{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink);background:var(--gold);padding:6px 12px;border-radius:2px;white-space:nowrap}
+  .layer-inner.steel .layer-for{background:var(--steel-light);color:var(--ink)}
+
+  /* ═══ HERO ═══ */
+  .hero{min-height:100vh;display:flex;align-items:center;padding:110px clamp(18px,5vw,60px) 70px;
+    position:relative;overflow:hidden;max-width:1240px;margin:0 auto}
+  .hero::before{content:'';position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse 55% 45% at 78% 42%,rgba(201,168,76,.10) 0,transparent 70%),
+               radial-gradient(ellipse 45% 55% at 8% 85%,rgba(58,74,92,.28) 0,transparent 65%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,70px);width:100%;align-items:center;position:relative}
+  .hero-tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);
+    margin-bottom:22px;display:flex;align-items:center;gap:12px}
+  .hero-tag::before{content:'';width:34px;height:1px;background:var(--gold)}
+  h1{font-family:var(--display);font-size:clamp(38px,5.2vw,70px);line-height:1.08;margin-bottom:22px}
+  h1 em{color:var(--gold);font-style:italic}
+  .hero-slogan{font-family:var(--display);font-size:clamp(19px,2.2vw,27px);font-style:italic;color:var(--gold);
+    line-height:1.4;margin-bottom:16px}
+  .hero-sub{color:var(--warm-gray);font-size:16px;line-height:1.75;max-width:460px;margin-bottom:32px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    padding:13px 22px;border-radius:2px;text-decoration:none;cursor:pointer;border:1px solid var(--gold);
+    background:var(--gold);color:var(--ink);transition:.22s;display:inline-flex;align-items:center;gap:8px}
+  .btn:hover{background:var(--gold-light);border-color:var(--gold-light);transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--gold)}
+  .btn.ghost:hover{background:rgba(201,168,76,.12);transform:translateY(-2px)}
+  .btn.steel{background:transparent;border-color:var(--steel-light);color:var(--steel-light)}
+  .btn.steel:hover{background:rgba(110,134,152,.14)}
+
+  .hero-mark{display:flex;align-items:center;justify-content:center;position:relative}
+  .hero-mark-box{width:min(100%,420px);aspect-ratio:1;border:1px solid var(--line);
+    background:radial-gradient(circle at 50% 45%,rgba(201,168,76,.08),transparent 68%),var(--surface);
+    display:flex;align-items:center;justify-content:center;position:relative}
+  .hero-mark-box::before,.hero-mark-box::after{content:'';position:absolute;width:16px;height:16px;border:1px solid var(--gold)}
+  .hero-mark-box::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
+  .hero-mark-box::after{bottom:-1px;right:-1px;border-left:0;border-top:0}
+  .hero-mark-box svg{width:62%;color:var(--gold)}
+  .hero-mark-cap{position:absolute;bottom:-30px;left:0;right:0;text-align:center;
+    font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--warm-gray)}
+
+  /* ═══ CARDS chung ═══ */
+  .card{background:rgba(245,240,232,.03);border:1px solid var(--line-soft);padding:26px 28px;
+    border-radius:2px;transition:.25s;position:relative;overflow:hidden}
+  .card:hover{border-color:var(--line);background:rgba(245,240,232,.05)}
+  .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+  .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+
+  /* ═══ 01 · ĐỊNH VỊ ═══ */
+  .pos-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pos-card{border:1px solid var(--line-soft);padding:30px;position:relative;background:var(--surface)}
+  .pos-card.hl{border-color:var(--line);background:linear-gradient(160deg,rgba(201,168,76,.07),var(--surface) 55%)}
+  .pos-card h4{font-family:var(--display);font-size:22px;color:var(--cream);margin-bottom:12px}
+  .pos-card.hl h4{color:var(--gold)}
+  .pos-card p{color:var(--warm-gray);font-size:14.5px}
+  .pos-card .mono-lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--steel-light);margin-bottom:14px;display:block}
+  .origin{margin-top:22px;border:1px solid var(--line);border-left:3px solid var(--gold);padding:26px 30px;
+    background:linear-gradient(90deg,rgba(201,168,76,.05),transparent 70%)}
+  .origin p{font-size:16px;line-height:1.85;color:var(--cream)}
+  .origin p+p{margin-top:14px}
+  .origin b{color:var(--gold);font-weight:600}
+  .proof-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:22px}
+  .proof{border:1px solid var(--line-soft);padding:20px;text-align:center;background:rgba(245,240,232,.02)}
+  .proof b{display:block;font-family:var(--display);font-size:34px;color:var(--gold);line-height:1}
+  .proof span{font-size:12px;color:var(--warm-gray);display:block;margin-top:7px;letter-spacing:.02em}
+
+  /* ═══ 02 · TẦM NHÌN / SỨ MỆNH ═══ */
+  .vm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .vm{border:1px solid var(--line-soft);padding:40px 36px;position:relative;overflow:hidden;background:var(--surface)}
+  .vm::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--gold)}
+  .vm.m::before{background:var(--steel-light)}
+  .vm-icon{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+  .vm.m .vm-icon{color:var(--steel-light)}
+  .vm-text{font-family:var(--display);font-size:clamp(20px,2.3vw,27px);line-height:1.45;color:var(--cream)}
+  .vm-text em{color:var(--gold);font-style:italic}
+  .vm.m .vm-text em{color:var(--steel-light)}
+  .vm-note{margin-top:20px;padding-top:18px;border-top:1px solid var(--line-soft);color:var(--warm-gray);font-size:13.5px}
+
+  /* ═══ 03 · GIÁ TRỊ CỐT LÕI ═══ */
+  .val-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .val{border:1px solid var(--line-soft);background:var(--surface);padding:32px 30px;cursor:pointer;
+    transition:.28s;position:relative;overflow:hidden}
+  .val:hover{border-color:var(--line);transform:translateY(-3px)}
+  .val.open{border-color:var(--gold);background:linear-gradient(170deg,rgba(201,168,76,.08),var(--surface) 60%)}
+  .val-no{font-family:var(--display);font-size:52px;font-weight:900;color:rgba(201,168,76,.18);line-height:1;
+    position:absolute;top:18px;right:22px;transition:.3s}
+  .val.open .val-no{color:rgba(201,168,76,.45)}
+  .val h4{font-family:var(--display);font-size:24px;color:var(--gold);margin-bottom:12px;padding-right:50px}
+  .val-short{color:var(--cream);font-size:14.5px;line-height:1.7}
+  .val-more{max-height:0;overflow:hidden;transition:max-height .38s ease,margin .3s,opacity .3s;opacity:0}
+  .val.open .val-more{max-height:420px;margin-top:18px;opacity:1}
+  .val-more .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--steel-light);display:block;margin-bottom:8px;padding-top:16px;border-top:1px solid var(--line-soft)}
+  .val-more p{color:var(--warm-gray);font-size:13.5px;line-height:1.7}
+  .val-toggle{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--warm-gray);margin-top:18px;display:flex;align-items:center;gap:7px}
+  .val.open .val-toggle{color:var(--gold)}
+  .val-toggle i{font-style:normal;transition:.3s;display:inline-block}
+  .val.open .val-toggle i{transform:rotate(45deg)}
+
+  @media(max-width:1180px){.nav-scroll{display:none}.nav-burger{display:block}}
+  @media(max-width:860px){
+    .hero{min-height:auto;padding-top:96px}
+    .hero-grid,.pos-wrap,.vm-grid{grid-template-columns:1fr}
+    .hero-mark{order:-1}
+    .hero-mark-box{width:min(78%,290px)}
+    .nav-scroll{display:none}
+    .nav-burger{display:block}
+    .nav-scroll.show{display:flex;position:fixed;top:64px;left:0;right:0;flex-direction:column;
+      align-items:stretch;background:rgba(10,10,10,.99);border-bottom:1px solid var(--line);
+      padding:14px;gap:8px;max-height:calc(100vh - 64px);overflow-y:auto}
+    .nav-scroll.show .nav-group{flex-direction:column;align-items:stretch}
+    .nav-scroll.show .nav-group>i{padding:4px 9px}
+  }
+/* ═══ 05 · GIỌNG NÓI ═══ */
+  .pers-list{display:grid;gap:16px;max-width:760px}
+  .pers{display:grid;grid-template-columns:130px 1fr 130px;align-items:center;gap:14px}
+  .pers-l,.pers-r{font-size:12.5px;color:var(--warm-gray)}
+  .pers-r{text-align:right}
+  .pers-l b,.pers-r b{display:block;color:var(--cream);font-size:13.5px;font-weight:600}
+  .pers-bar{height:4px;background:rgba(245,240,232,.09);position:relative;border-radius:2px}
+  .pers-dot{position:absolute;top:50%;width:13px;height:13px;border-radius:50%;background:var(--gold);
+    transform:translate(-50%,-50%);box-shadow:0 0 0 4px rgba(201,168,76,.18)}
+  .voice-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+  .vtab{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+    padding:10px 16px;border:1px solid var(--line-soft);background:transparent;color:var(--warm-gray);
+    cursor:pointer;border-radius:2px;transition:.2s}
+  .vtab:hover{color:var(--cream)}
+  .vtab.on{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08)}
+  .vpane{display:none;grid-template-columns:1fr 1fr;gap:16px}
+  .vpane.on{display:grid}
+  .vbox{border:1px solid var(--line-soft);padding:26px;background:var(--surface)}
+  .vbox.yes{border-left:3px solid var(--gold)}
+  .vbox.no{border-left:3px solid #6B4A42}
+  .vbox .head{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
+  .vbox.yes .head{color:var(--gold)}
+  .vbox.no .head{color:#A8756A}
+  .vbox p{font-size:14.5px;line-height:1.75;color:var(--cream);font-style:italic}
+  .vbox .why{margin-top:14px;padding-top:14px;border-top:1px solid var(--line-soft);
+    font-size:12.5px;color:var(--warm-gray);font-style:normal}
+  .word-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+  .wcol{border:1px solid var(--line-soft);padding:24px;background:rgba(245,240,232,.02)}
+  .wcol .head{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
+  .wcol.y .head{color:var(--gold)}.wcol.n .head{color:#A8756A}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:12.5px;padding:6px 12px;border-radius:2px;border:1px solid var(--line-soft);color:var(--cream)}
+  .wcol.y .chip{border-color:rgba(201,168,76,.3);background:rgba(201,168,76,.07)}
+  .wcol.n .chip{border-color:rgba(168,117,106,.3);background:rgba(168,117,106,.07);color:var(--warm-gray);text-decoration:line-through}
+
+  /* ═══ 06 · LOGO ═══ */
+  .logo-lab{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start}
+  .lab-stage{border:1px solid var(--line-soft);min-height:380px;display:flex;align-items:center;justify-content:center;
+    position:relative;transition:background .3s;overflow:hidden;padding:40px}
+  .lab-logo{position:relative;display:flex;align-items:center;gap:20px;transition:.3s}
+  .lab-logo svg.mk{width:var(--mkw,150px);transition:width .25s,color .3s;flex-shrink:0}
+  .lab-word{display:none;flex-direction:column;line-height:1}
+  .lab-logo.lock .lab-word{display:flex}
+  .lab-word b{font-family:var(--display);font-size:calc(var(--mkw,150px)*.30);font-weight:700;letter-spacing:.03em}
+  .lab-word span{font-family:var(--mono);font-size:calc(var(--mkw,150px)*.088);letter-spacing:.22em;
+    text-transform:uppercase;margin-top:calc(var(--mkw,150px)*.05);opacity:.8}
+  .lab-logo.lock::before{content:'';position:absolute;left:calc(var(--mkw,150px) + 10px);top:8%;bottom:8%;width:1px;background:currentColor;opacity:.3}
+  .safe-ring{position:absolute;inset:-18%;border:1px dashed rgba(201,168,76,.55);display:none;pointer-events:none}
+  .lab-logo.safe .safe-ring{display:block}
+  .safe-ring::after{content:'X = 1/4 chiều cao logo';position:absolute;top:-22px;left:0;
+    font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+  .lab-ctrl{border:1px solid var(--line-soft);padding:24px;background:var(--surface)}
+  .ctrl-group{margin-bottom:24px}
+  .ctrl-group:last-child{margin-bottom:0}
+  .ctrl-group>.lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--steel-light);display:block;margin-bottom:12px}
+  .swatch-row{display:flex;gap:8px;flex-wrap:wrap}
+  .sw-btn{width:34px;height:34px;border-radius:2px;border:1px solid rgba(245,240,232,.22);cursor:pointer;transition:.2s;position:relative}
+  .sw-btn:hover{transform:scale(1.08)}
+  .sw-btn.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(201,168,76,.35)}
+  .opt-row{display:flex;gap:8px;flex-wrap:wrap}
+  .opt{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:9px 13px;
+    border:1px solid var(--line-soft);background:transparent;color:var(--warm-gray);cursor:pointer;border-radius:2px;transition:.2s}
+  .opt:hover{color:var(--cream)}
+  .opt.on{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.09)}
+  input[type=range]{width:100%;accent-color:var(--gold);cursor:pointer}
+  .size-val{font-family:var(--mono);font-size:11px;color:var(--gold);float:right}
+  .logo-rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:18px}
+  .lr{border:1px solid var(--line-soft);padding:22px;background:rgba(245,240,232,.02)}
+  .lr .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:10px}
+  .lr p{font-size:13.5px;color:var(--warm-gray)}
+  .lr b{color:var(--cream)}
+  .misuse{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:18px}
+  .mu{border:1px solid rgba(168,117,106,.28);background:rgba(168,117,106,.05);padding:16px;text-align:center}
+  .mu-box{height:92px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;background:var(--surface-2);overflow:hidden}
+  .mu-box svg{width:58px;color:var(--cream)}
+  .mu span{font-size:11.5px;color:#A8756A;display:block;line-height:1.5}
+  .mu span::before{content:'✕ ';font-weight:700}
+  .mu1 svg{transform:rotate(-14deg)}
+  .mu2 svg{transform:scaleX(1.55)}
+  .mu3 svg{color:#7B3FA0}
+  .mu4-box{background:linear-gradient(135deg,#8a5a2a,#c9a84c)}
+  .mu4-box svg{color:#C9A84C;mix-blend-mode:normal;opacity:.55}
+  .mu5 svg{filter:drop-shadow(3px 4px 0 #A8756A)}
+  @media(max-width:860px){
+    .logo-lab,.vpane.on,.word-cols,.slogan-uses{grid-template-columns:1fr}
+    .pers{grid-template-columns:92px 1fr 92px}
+  }
+
+  /* ═══ tải logo ═══ */
+  .dl-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+  .dl-btn{border:1px solid var(--line-soft);background:transparent;color:var(--warm-gray);cursor:pointer;
+    padding:11px 8px;border-radius:2px;transition:.2s;display:flex;flex-direction:column;align-items:center;gap:3px}
+  .dl-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.08)}
+  .dl-btn b{font-family:var(--mono);font-size:11px;letter-spacing:.14em;font-weight:500}
+  .dl-btn i{font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;font-style:normal;opacity:.7}
+  .dl-btn.svg:hover{border-color:var(--steel-light);color:var(--steel-light);background:rgba(110,134,152,.1)}
+  .dl-btn.busy{opacity:.45;pointer-events:none}
+  .dl-note{font-size:11.5px;line-height:1.6;color:var(--warm-gray);margin-top:13px}
+  @media(min-width:861px){.logo-lab{align-items:stretch}.lab-stage{height:100%}}
+  .lab-stage.alpha{
+    background-color:var(--surface-2) !important;
+    background-image:
+      linear-gradient(45deg,rgba(245,240,232,.06) 25%,transparent 25%,transparent 75%,rgba(245,240,232,.06) 75%),
+      linear-gradient(45deg,rgba(245,240,232,.06) 25%,transparent 25%,transparent 75%,rgba(245,240,232,.06) 75%) !important;
+    background-size:24px 24px !important;
+    background-position:0 0,12px 12px !important;
+  }
+
+  /* ═══ 07 · MÀU ═══ */
+  .pal-title{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--steel-light);margin:34px 0 14px;display:flex;align-items:center;gap:10px}
+  .pal-title:first-of-type{margin-top:0}
+  .pal-title b{color:var(--gold);font-weight:400}
+  .col-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:14px}
+  .sw{border:1px solid var(--line-soft);cursor:pointer;transition:.22s;position:relative;overflow:hidden}
+  .sw:hover{transform:translateY(-4px);border-color:var(--line)}
+  .sw-top{height:104px;display:flex;align-items:flex-end;justify-content:space-between;padding:12px;position:relative}
+  .sw-hex{font-family:var(--mono);font-size:11px;opacity:.75}
+  .sw-copy{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;opacity:0;transition:.2s}
+  .sw:hover .sw-copy{opacity:.75}
+  .sw-badge{position:absolute;top:10px;right:10px;font-family:var(--mono);font-size:8px;letter-spacing:.12em;
+    text-transform:uppercase;padding:3px 7px;border-radius:2px;background:rgba(0,0,0,.45);color:#fff}
+  .sw-badge.new{background:var(--steel-light);color:var(--ink)}
+  .sw-info{background:rgba(245,240,232,.04);border-top:1px solid var(--line-soft);padding:14px 15px}
+  .sw-name{font-size:13.5px;font-weight:600;color:var(--cream);margin-bottom:5px}
+  .sw-use{font-size:11.8px;color:var(--warm-gray);line-height:1.55}
+  .sw-share{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:8px;display:block}
+
+  .cmp{border:1px solid var(--line);background:var(--surface);padding:28px;margin-top:34px}
+  .cmp h4{font-family:var(--display);font-size:21px;color:var(--cream);margin-bottom:8px}
+  .cmp>p{color:var(--warm-gray);font-size:13.5px;margin-bottom:22px;max-width:660px}
+  .cmp-rows{display:grid;gap:12px}
+  .cmp-row{display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:center}
+  .cmp-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-gray)}
+  .cmp-lbl b{display:block;color:var(--cream);font-size:12.5px;letter-spacing:.06em;margin-bottom:3px}
+  .cmp-bar{display:flex;height:42px;border-radius:2px;overflow:hidden;border:1px solid var(--line-soft)}
+  .cmp-bar div{flex:1;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:8.5px;letter-spacing:.06em}
+  .cmp-note{margin-top:20px;padding-top:18px;border-top:1px solid var(--line-soft);font-size:13.5px;color:var(--warm-gray)}
+  .cmp-note b{color:var(--gold)}
+
+  .combo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:22px}
+  .combo{border:1px solid var(--line-soft);overflow:hidden}
+  .combo-demo{height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:14px;text-align:center}
+  .combo-demo b{font-family:var(--display);font-size:20px}
+  .combo-demo i{font-family:var(--mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;font-style:normal;opacity:.8}
+  .combo-info{padding:14px 16px;background:rgba(245,240,232,.03)}
+  .combo-info .t{font-size:12.5px;font-weight:600;color:var(--cream);margin-bottom:5px}
+  .combo-info .d{font-size:11.5px;color:var(--warm-gray);line-height:1.55}
+
+  /* ═══ 08 · CHỮ ═══ */
+  .font-card{border:1px solid var(--line-soft);background:var(--surface);padding:28px 30px;margin-bottom:16px}
+  .font-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin-bottom:22px;
+    padding-bottom:18px;border-bottom:1px solid var(--line-soft)}
+  .font-head .role{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-light)}
+  .font-head .name{font-family:var(--display);font-size:27px;color:var(--gold)}
+  .font-head .meta{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--warm-gray);letter-spacing:.06em}
+  .font-demo{margin-bottom:18px}
+  .fd-pf{font-family:var(--display);font-size:clamp(24px,3.4vw,40px);line-height:1.25;color:var(--cream)}
+  .fd-pf em{color:var(--gold);font-style:italic}
+  .fd-bv{font-family:var(--body);font-size:16px;line-height:1.75;color:var(--cream);max-width:680px}
+  .fd-bv .light{font-weight:300;color:var(--warm-gray);font-size:14px;display:block;margin-top:10px}
+  .fd-dm{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .fd-dm span{display:block;color:var(--warm-gray);font-size:11px;margin-top:8px}
+  .font-spec{display:flex;flex-wrap:wrap;gap:8px}
+  .spec{font-family:var(--mono);font-size:10px;letter-spacing:.08em;padding:6px 11px;border:1px solid var(--line-soft);
+    color:var(--warm-gray);border-radius:2px}
+  .spec b{color:var(--cream);font-weight:500}
+
+  .scale-box{border:1px solid var(--line);background:var(--surface);padding:30px;margin-top:26px}
+  .scale-ctrl{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:26px;padding-bottom:22px;border-bottom:1px solid var(--line-soft)}
+  .scale-ctrl label{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-light)}
+  .scale-ctrl input{flex:1;min-width:180px}
+  .scale-ctrl output{font-family:var(--mono);font-size:12px;color:var(--gold);min-width:56px}
+  .scale-row{display:grid;grid-template-columns:100px 1fr;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(245,240,232,.05)}
+  .scale-row:last-child{border-bottom:0}
+  .scale-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--steel-light)}
+  .scale-tag span{display:block;color:var(--warm-gray);font-size:9px;letter-spacing:.06em;margin-top:4px;text-transform:none}
+  .sc-kicker{font-family:var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .sc-head{font-family:var(--display);line-height:1.18;color:var(--cream)}
+  .sc-sub{font-family:var(--body);font-weight:600;color:var(--cream);line-height:1.4}
+  .sc-body{font-family:var(--body);font-weight:400;color:var(--cream);line-height:1.7;max-width:640px}
+  .sc-cap{font-family:var(--body);font-weight:300;color:var(--warm-gray)}
+  @media(max-width:860px){
+    .cmp-row,.scale-row{grid-template-columns:1fr;gap:8px}
+  }
+
+  /* ═══ 09 · ỨNG DỤNG ═══ */
+  .app-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+  .apane{display:none}
+  .apane.on{display:block;animation:fade .32s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .apane-note{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line-soft)}
+  .apane-note span{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--warm-gray)}
+  .apane-note span b{color:var(--gold);font-weight:400}
+  .canvas{border:1px solid var(--line-soft);overflow:hidden;position:relative;background:var(--surface-2)}
+
+  /* cover */
+  .cover{aspect-ratio:820/312;background:#0A0A0A;display:flex;align-items:center;
+    padding:0 clamp(20px,4.5vw,56px);gap:clamp(16px,3vw,40px);position:relative;overflow:hidden}
+  .cover::after{content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse 50% 90% at 88% 50%,rgba(58,74,92,.45),transparent 70%),
+               radial-gradient(ellipse 40% 80% at 12% 40%,rgba(201,168,76,.10),transparent 70%)}
+  .cover>*{position:relative;z-index:1}
+  .cover svg.mk{width:clamp(48px,9vw,104px);color:#C9A84C;flex-shrink:0}
+  .cover .txt b{display:block;font-family:var(--display);font-size:clamp(17px,3.1vw,34px);color:#F5F0E8;line-height:1.15}
+  .cover .txt i{display:block;font-family:var(--mono);font-size:clamp(7px,1.05vw,11px);letter-spacing:.24em;
+    text-transform:uppercase;color:#C9A84C;font-style:normal;margin:6px 0 clamp(6px,1.4vw,14px)}
+  .cover .txt p{font-family:var(--display);font-style:italic;font-size:clamp(11px,1.75vw,19px);color:#C9A84C}
+  .cover .txt small{display:block;font-family:var(--body);font-weight:300;font-size:clamp(8px,1.1vw,12px);
+    color:#8A7F74;margin-top:clamp(4px,1vw,10px)}
+
+  /* namecard */
+  .cards2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .ncard{aspect-ratio:85/55;padding:clamp(14px,3vw,26px);display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .nc-front{background:#0A0A0A}
+  .nc-front::after{content:'';position:absolute;right:-14%;bottom:-32%;width:56%;aspect-ratio:1;
+    border:1px solid rgba(201,168,76,.16);border-radius:50%}
+  .nc-front .top{display:flex;align-items:center;gap:11px}
+  .nc-front svg{width:clamp(30px,6vw,46px);color:#C9A84C}
+  .nc-front .bn b{display:block;font-family:var(--display);font-size:clamp(14px,2.6vw,20px);color:#F5F0E8;line-height:1}
+  .nc-front .bn i{display:block;font-family:var(--mono);font-size:clamp(5.5px,1vw,7.5px);letter-spacing:.2em;
+    text-transform:uppercase;color:#8A7F74;font-style:normal;margin-top:4px}
+  .nc-front .slg{margin-top:auto;font-family:var(--display);font-style:italic;font-size:clamp(10px,1.9vw,14px);color:#C9A84C;position:relative}
+  .nc-back{background:#F5F0E8;color:#0A0A0A}
+  .nc-back .nm{font-family:var(--display);font-size:clamp(15px,2.8vw,22px);font-weight:700;line-height:1.1}
+  .nc-back .ro{font-family:var(--mono);font-size:clamp(6px,1.1vw,8.5px);letter-spacing:.18em;text-transform:uppercase;
+    color:#3A4A5C;margin-top:5px}
+  .nc-back .ln{width:34px;height:2px;background:#C9A84C;margin:clamp(8px,2vw,16px) 0}
+  .nc-back .ct{margin-top:auto;font-size:clamp(8px,1.4vw,11px);line-height:1.85;color:#5A5048}
+  .nc-back .ct b{color:#0A0A0A;font-weight:600}
+
+  /* slide */
+  .slide{aspect-ratio:16/9;display:flex;flex-direction:column;padding:clamp(18px,3.6vw,44px);position:relative;overflow:hidden}
+  .sl-a{background:#0A0A0A}
+  .sl-a::after{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;
+    background:linear-gradient(90deg,#C9A84C 0 34%,#3A4A5C 34% 100%)}
+  .sl-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .sl-top .kk{font-family:var(--mono);font-size:clamp(6.5px,1vw,10px);letter-spacing:.22em;text-transform:uppercase;color:#C9A84C}
+  .sl-top svg{width:clamp(20px,3vw,32px);color:#C9A84C;flex-shrink:0}
+  .sl-mid{margin:auto 0}
+  .sl-mid h5{font-family:var(--display);font-size:clamp(17px,3.5vw,40px);color:#F5F0E8;line-height:1.16;font-weight:700}
+  .sl-mid h5 em{color:#C9A84C;font-style:italic}
+  .sl-mid p{font-size:clamp(8px,1.35vw,15px);color:#8A7F74;margin-top:clamp(6px,1.2vw,14px);max-width:78%;line-height:1.6}
+  .sl-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(5px,1vw,12px);margin-top:auto}
+  .sl-step{border:1px solid rgba(110,134,152,.32);background:rgba(58,74,92,.22);padding:clamp(6px,1.3vw,14px)}
+  .sl-step i{display:block;font-family:var(--mono);font-size:clamp(6px,.95vw,9px);letter-spacing:.16em;color:#6E8698;font-style:normal}
+  .sl-step b{display:block;font-family:var(--body);font-size:clamp(7.5px,1.25vw,13px);color:#F5F0E8;margin-top:5px;font-weight:600;line-height:1.35}
+  .sl-foot{display:flex;justify-content:space-between;align-items:center;margin-top:clamp(8px,1.6vw,18px);
+    font-family:var(--mono);font-size:clamp(5.5px,.85vw,8.5px);letter-spacing:.16em;text-transform:uppercase;color:#5F574F}
+
+  /* post */
+  .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+  .post{aspect-ratio:1;padding:clamp(16px,3.4vw,30px);display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .p1{background:#0A0A0A}
+  .p1::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 20% 85%,rgba(58,74,92,.4),transparent 70%)}
+  .p1>*{position:relative;z-index:1}
+  .p2{background:#3A4A5C}
+  .p3{background:#F5F0E8}
+  .p-kk{font-family:var(--mono);font-size:clamp(6.5px,1.3vw,9.5px);letter-spacing:.2em;text-transform:uppercase}
+  .p-h{font-family:var(--display);font-size:clamp(17px,4vw,28px);line-height:1.2;margin-top:auto;font-weight:700}
+  .p-s{font-size:clamp(9px,1.8vw,13px);line-height:1.6;margin-top:10px}
+  .p-f{display:flex;align-items:center;gap:7px;margin-top:clamp(12px,2.4vw,20px);padding-top:clamp(9px,1.8vw,14px);border-top:1px solid}
+  .p-f svg{width:clamp(14px,2.6vw,20px);flex-shrink:0}
+  .p-f span{font-family:var(--mono);font-size:clamp(5.5px,1.1vw,8px);letter-spacing:.18em;text-transform:uppercase}
+  .p-num{font-family:var(--display);font-size:clamp(42px,10vw,76px);font-weight:900;line-height:.92;color:#C9A84C}
+
+  /* email */
+  .esig{background:#F5F0E8;padding:clamp(20px,4vw,34px);color:#0A0A0A}
+  .esig-in{display:flex;gap:clamp(14px,3vw,24px);align-items:flex-start}
+  .esig-in>svg{width:clamp(44px,8vw,66px);color:#0A0A0A;flex-shrink:0;padding-right:clamp(14px,3vw,24px);
+    border-right:1px solid rgba(10,10,10,.14)}
+  .esig .nm{font-family:var(--display);font-size:clamp(16px,2.4vw,21px);font-weight:700;line-height:1.1}
+  .esig .ro{font-family:var(--mono);font-size:clamp(7px,1.1vw,9px);letter-spacing:.17em;text-transform:uppercase;color:#3A4A5C;margin-top:5px}
+  .esig .ct{font-size:clamp(11px,1.5vw,13px);line-height:1.85;margin-top:12px;color:#4A423A}
+  .esig .ct b{color:#0A0A0A;font-weight:600}
+  .esig .slg{margin-top:12px;padding-top:11px;border-top:1px solid rgba(10,10,10,.12);
+    font-family:var(--display);font-style:italic;font-size:clamp(11px,1.6vw,14px);color:#8C6D2A}
+
+  /* proposal */
+  .prop{aspect-ratio:210/297;background:#0A0A0A;padding:clamp(18px,3.6vw,40px);display:flex;flex-direction:column;position:relative;overflow:hidden}
+  .prop::after{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:#C9A84C}
+  .prop::before{content:'';position:absolute;right:-22%;top:18%;width:70%;aspect-ratio:1;
+    border:1px solid rgba(110,134,152,.22);border-radius:50%}
+  .prop>*{position:relative;z-index:1}
+  .prop .top{display:flex;align-items:center;gap:10px;margin-bottom:auto}
+  .prop .top svg{width:clamp(26px,4.4vw,40px);color:#C9A84C}
+  .prop .top b{font-family:var(--display);font-size:clamp(12px,2vw,18px);color:#F5F0E8;line-height:1}
+  .prop .top i{display:block;font-family:var(--mono);font-size:clamp(5px,.85vw,7px);letter-spacing:.2em;
+    text-transform:uppercase;color:#8A7F74;font-style:normal;margin-top:3px}
+  .prop .kk{font-family:var(--mono);font-size:clamp(6.5px,1.1vw,10px);letter-spacing:.22em;text-transform:uppercase;color:#6E8698;margin-bottom:12px}
+  .prop h5{font-family:var(--display);font-size:clamp(20px,3.8vw,36px);color:#F5F0E8;line-height:1.15;font-weight:700}
+  .prop h5 em{color:#C9A84C;font-style:italic}
+  .prop .cl{margin-top:clamp(14px,2.6vw,24px);padding-top:clamp(12px,2.2vw,18px);border-top:1px solid rgba(201,168,76,.24)}
+  .prop .cl span{display:block;font-family:var(--mono);font-size:clamp(5.5px,.9vw,8px);letter-spacing:.2em;text-transform:uppercase;color:#8A7F74}
+  .prop .cl b{display:block;font-size:clamp(11px,1.8vw,16px);color:#F5F0E8;margin-top:6px;font-weight:600}
+  .prop .ft{margin-top:clamp(16px,3vw,28px);font-family:var(--display);font-style:italic;
+    font-size:clamp(10px,1.6vw,15px);color:#C9A84C}
+
+  /* ═══ 10 · QUY TẮC ═══ */
+  .rules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+  .rblock{border:1px solid var(--line-soft);background:var(--surface);padding:28px 30px}
+  .rblock h4{font-family:var(--display);font-size:21px;color:var(--gold);margin-bottom:18px;
+    padding-bottom:14px;border-bottom:1px solid var(--line-soft)}
+  .rblock ul{list-style:none;display:grid;gap:13px}
+  .rblock li{font-size:14px;line-height:1.65;color:var(--warm-gray);padding-left:20px;position:relative}
+  .rblock li::before{content:'—';position:absolute;left:0;color:var(--gold);opacity:.65}
+  .rblock li b{color:var(--cream);font-weight:600}
+  .dd{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+  .ddbox{border:1px solid var(--line-soft);padding:24px;background:rgba(245,240,232,.02)}
+  .ddbox.y{border-left:3px solid var(--gold)}
+  .ddbox.n{border-left:3px solid #6B4A42}
+  .ddbox .head{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px}
+  .ddbox.y .head{color:var(--gold)}.ddbox.n .head{color:#A8756A}
+  .ddbox ul{list-style:none;display:grid;gap:11px}
+  .ddbox li{font-size:13.5px;line-height:1.6;color:var(--warm-gray);padding-left:19px;position:relative}
+  .ddbox.y li::before{content:'✓';position:absolute;left:0;color:var(--gold)}
+  .ddbox.n li::before{content:'✕';position:absolute;left:0;color:#A8756A}
+
+  /* ═══ 11 · CHECKLIST ═══ */
+  .ck-wrap{border:1px solid var(--line);background:var(--surface);padding:clamp(24px,4vw,36px)}
+  .ck-bar{height:5px;background:rgba(245,240,232,.08);border-radius:3px;overflow:hidden;margin-bottom:10px}
+  .ck-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold-dark),var(--gold));transition:width .35s}
+  .ck-meta{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+  .ck-meta .n{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--warm-gray)}
+  .ck-meta .n b{color:var(--gold)}
+  .ck-list{display:grid;gap:11px}
+  .ck{display:flex;gap:14px;align-items:flex-start;padding:15px 18px;border:1px solid var(--line-soft);
+    cursor:pointer;transition:.22s;background:rgba(245,240,232,.015);user-select:none}
+  .ck:hover{border-color:var(--line)}
+  .ck.done{border-color:rgba(201,168,76,.4);background:rgba(201,168,76,.06)}
+  .ck-box{width:19px;height:19px;border:1px solid var(--warm-gray);border-radius:2px;flex-shrink:0;margin-top:2px;
+    display:flex;align-items:center;justify-content:center;transition:.2s;font-size:12px;color:transparent}
+  .ck.done .ck-box{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+  .ck-txt b{display:block;font-size:14.5px;color:var(--cream);font-weight:600;margin-bottom:3px}
+  .ck.done .ck-txt b{color:var(--gold)}
+  .ck-txt span{font-size:12.5px;color:var(--warm-gray);line-height:1.55}
+  .ck-done-msg{margin-top:22px;padding:18px 22px;border:1px solid var(--gold);background:rgba(201,168,76,.09);
+    display:none;font-family:var(--display);font-size:17px;color:var(--gold);font-style:italic}
+  .ck-done-msg.show{display:block}
+
+  /* ═══ FOOTER / TOAST ═══ */
+  footer{border-top:1px solid var(--line);padding:50px clamp(18px,5vw,60px);max-width:1240px;margin:60px auto 0;
+    display:flex;flex-wrap:wrap;gap:24px;align-items:center}
+  footer svg{width:46px;color:var(--gold)}
+  .f-txt b{display:block;font-family:var(--display);font-size:19px;color:var(--cream)}
+  .f-txt span{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--warm-gray)}
+  .f-slg{margin-left:auto;font-family:var(--display);font-style:italic;font-size:16px;color:var(--gold);text-align:right}
+  .f-slg span{display:block;font-family:var(--mono);font-style:normal;font-size:9px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--warm-gray);margin-top:7px}
+  #toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,24px);background:var(--gold);color:var(--ink);
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:13px 22px;
+    border-radius:2px;opacity:0;pointer-events:none;transition:.28s;z-index:500}
+  #toast.show{opacity:1;transform:translate(-50%,0)}
+  .top-btn{position:fixed;right:22px;bottom:22px;width:42px;height:42px;border:1px solid var(--line);
+    background:rgba(10,10,10,.9);color:var(--gold);cursor:pointer;border-radius:2px;font-size:15px;
+    opacity:0;pointer-events:none;transition:.25s;z-index:180}
+  .top-btn.show{opacity:1;pointer-events:auto}
+  .top-btn:hover{background:var(--gold);color:var(--ink)}
+  @media(max-width:860px){
+    .dd,.sl-steps{grid-template-columns:1fr 1fr}
+    .f-slg{margin-left:0;text-align:left}
+  }
+
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="nsc-mark" viewBox="0 0 1077 952">
+    <g transform="translate(0,952) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+      <path d="M4010 9509 c-127 -25 -214 -104 -288 -263 -28 -58 -79 -159 -115 -224 -35 -64 -110 -205 -168 -312 -194 -362 -228 -380 -729 -380 -428 0 -442 5 -632 197 -134 135 -183 164 -280 165 -122 2 -137 -9 -579 -437 -430 -417 -439 -427 -439 -536 0 -113 14 -136 214 -334 281 -277 280 -276 274 -822 -4 -332 -6 -363 -27 -431 -106 -356 -427 -615 -867 -702 -184 -36 -203 -41 -244 -69 -47 -31 -92 -91 -111 -146 -21 -60 -20 -988 0 -1060 35 -120 125 -176 341 -211 465 -74 777 -320 882 -696 18 -64 21 -110 25 -389 8 -506 3 -520 -264 -782 -200 -197 -223 -232 -223 -337 0 -112 8 -122 410 -518 412 -407 423 -416 550 -417 107 0 154 26 325 185 236 218 281 235 640 235 286 0 334 -9 485 -85 275 -139 500 -475 580 -865 26 -124 98 -214 205 -254 57 -21 65 -22 579 -19 l521 3 50 27 c84 44 175 164 175 230 0 50 78 277 134 393 133 272 326 451 577 537 93 31 97 32 324 36 362 6 422 -15 635 -223 165 -162 178 -170 290 -170 112 0 138 15 307 187 181 184 177 173 181 458 4 302 -25 377 -173 450 l-50 25 -2740 5 c-2251 4 -2747 8 -2780 19 -168 56 -287 183 -329 352 -24 96 -25 4617 -1 4718 43 179 185 319 364 357 51 11 172 14 547 14 607 0 610 1 713 176 235 398 603 682 1024 790 749 191 1459 -118 1823 -794 36 -68 110 -135 171 -156 67 -23 1422 -24 1499 -1 170 50 243 165 251 395 9 240 -41 369 -172 446 -83 48 -77 48 -745 54 l-635 5 -65 31 c-83 40 -150 99 -193 172 -94 156 -345 643 -403 780 -24 59 -119 144 -191 174 l-58 23 -775 2 c-426 0 -795 -3 -820 -8z M4521 8074 c-852 -143 -1285 -1119 -814 -1833 475 -720 1563 -725 2027 -10 576 889 -167 2018 -1213 1843z m346 -539 c654 -125 682 -1051 38 -1271 -390 -133 -820 171 -842 596 -22 423 375 757 804 675z M8166 7084 c-301 -73 -490 -402 -397 -694 l21 -65 -233 -227 -232 -227 -475 -1 c-440 0 -478 -2 -515 -19 -161 -74 -145 -305 25 -351 85 -23 1108 -8 1160 16 30 15 128 103 301 272 l256 251 49 -16 c81 -26 263 -24 346 5 391 135 508 625 218 911 -135 134 -339 190 -524 145z m227 -299 c94 -39 157 -134 157 -235 0 -286 -414 -346 -496 -72 -60 199 148 387 339 307z M2125 6873 c-46 -24 -66 -45 -86 -88 -18 -38 -19 -125 -19 -2200 0 -2432 -7 -2208 76 -2271 l37 -29 336 -3 336 -3 45 24 c93 49 84 -108 90 1566 l5 1474 70 -94 c304 -411 617 -844 1090 -1504 996 -1392 1000 -1397 1053 -1427 l47 -28 297 0 c353 0 369 4 419 102 18 36 19 88 19 1849 l0 1812 -42 -54 c-216 -277 -492 -457 -825 -539 l-43 -11 0 -727 -1 -727 -27 34 c-55 68 -317 426 -602 821 -134 185 -176 241 -575 765 -138 182 -319 420 -401 530 -548 732 -520 697 -576 726 -52 27 -673 29 -723 2z M10095 6175 c-166 -37 -304 -146 -378 -297 l-32 -67 -480 -3 -480 -3 -45 -24 c-25 -13 -115 -91 -200 -175 -85 -83 -214 -208 -286 -279 l-131 -127 -847 0 c-929 0 -883 3 -942 -61 -91 -98 -54 -262 69 -308 53 -20 1823 -15 1882 5 51 18 36 4 459 412 l189 182 411 0 411 0 30 -58 c167 -321 621 -382 880 -118 385 391 26 1040 -510 921z m249 -319 c159 -93 164 -325 9 -429 -217 -145 -482 97 -361 329 66 125 230 172 352 100z M8856 4835 c-134 -37 -270 -142 -336 -257 l-32 -58 -1067 0 -1067 0 -45 -29 c-118 -74 -112 -258 11 -321 39 -20 57 -20 1091 -23 923 -2 1053 -4 1060 -17 5 -8 21 -42 36 -75 214 -456 921 -370 1038 128 94 399 -289 762 -689 652z m223 -291 c109 -32 187 -143 179 -253 -20 -260 -367 -331 -482 -99 -98 197 90 416 303 352z M6335 3846 c-117 -53 -149 -211 -62 -304 54 -58 39 -57 582 -60 l500 -3 214 -208 214 -207 -17 -50 c-10 -27 -20 -89 -23 -139 -29 -507 573 -773 938 -415 419 411 -10 1082 -577 903 l-54 -17 -235 235 c-129 129 -252 243 -273 254 -48 26 -1152 36 -1207 11z m2080 -785 c94 -52 147 -161 126 -261 -46 -227 -344 -283 -464 -88 -136 220 111 475 338 349z"/>
+    </g>
+  </symbol>
+</svg>
+
+<nav>
+  <div class="nav-brand">
+    <svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+    <div><b>NGỌT</b><span>Studio Consultancy</span></div>
+  </div>
+  <button class="nav-burger" id="burger">MENU</button>
+  <div class="nav-scroll" id="navScroll">
+    <div class="nav-group g2"><i>Hướng dẫn</i><a href="#s5">05 Giọng nói</a><a href="#s6">06 Logo</a><a href="#s7">07 Màu</a><a href="#s8">08 Chữ</a><a href="#s9">09 Ứng dụng</a><a href="#s10">10 Quy tắc</a><a href="#s11">11 Checklist</a></div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-tag">Hướng dẫn sử dụng nhận diện · v1.0 · 2026</div>
+      <h1>Brand<br><em>Guideline</em></h1>
+      <p class="hero-slogan">Làm đúng từ chi tiết nhỏ nhất.</p>
+      <p class="hero-sub">Tài liệu nội bộ của NGỌT — Studio Consultancy. Mọi ấn phẩm mang tên NSC đều phải chạy qua bảy mục dưới đây trước khi ra khỏi cửa. Các mẫu trong tài liệu đều tương tác được: đổi màu logo, copy mã hex, kéo thang cỡ chữ, tick checklist.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#s6">Xem logo</a>
+        <a class="btn ghost" href="#s11">Tới checklist</a>
+      </div>
+    </div>
+    <div class="hero-mark">
+      <div class="hero-mark-box">
+        <svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+        <div class="hero-mark-cap">Logo chính · Gold trên nền tối</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ══════════ 05 · TÍNH CÁCH & GIỌNG NÓI ══════════ -->
+<section id="s5">
+  <div class="sec-head">
+    <div class="sec-tag">05 · Tính cách &amp; Giọng nói</div>
+    <h2>NSC nói như một người <em>đã làm rồi</em>, không phải người đọc sách</h2>
+    <p class="sec-desc">Giọng của NSC là giọng của một người anh trong nghề: điềm, thẳng, có số liệu, không đe doạ và không tâng bốc.</p>
+  </div>
+
+  <h3 style="margin-bottom:24px">Thang tính cách</h3>
+  <div class="pers-list" id="persList">
+    <div class="pers"><div class="pers-l"><b>Thân mật</b>đàn anh chia sẻ</div><div class="pers-bar"><span class="pers-dot" style="left:35%"></span></div><div class="pers-r"><b>Trang trọng</b>chuyên gia tư vấn</div></div>
+    <div class="pers"><div class="pers-l"><b>Cảm xúc</b>kể chuyện nghề</div><div class="pers-bar"><span class="pers-dot" style="left:62%"></span></div><div class="pers-r"><b>Lý tính</b>số liệu, quy trình</div></div>
+    <div class="pers"><div class="pers-l"><b>Nhẹ nhàng</b>gợi mở</div><div class="pers-bar"><span class="pers-dot" style="left:72%"></span></div><div class="pers-r"><b>Thẳng thắn</b>chỉ thẳng vấn đề</div></div>
+    <div class="pers"><div class="pers-l"><b>Nghệ thuật</b>bản sắc, chất</div><div class="pers-bar"><span class="pers-dot" style="left:50%"></span></div><div class="pers-r"><b>Thương mại</b>lợi nhuận, tăng trưởng</div></div>
+  </div>
+
+  <h3 style="margin:44px 0 20px">Nói thế nào trong từng tình huống</h3>
+  <div class="voice-tabs" id="vtabs">
+    <button class="vtab on" data-v="v1">Giới thiệu dịch vụ</button>
+    <button class="vtab" data-v="v2">Chỉ ra vấn đề của khách</button>
+    <button class="vtab" data-v="v3">Báo giá &amp; cam kết</button>
+    <button class="vtab" data-v="v4">Từ chối một yêu cầu</button>
+  </div>
+
+  <div class="vpane on" id="v1">
+    <div class="vbox yes"><div class="head">✓ NSC nói</div>
+      <p>"Chúng tôi không đưa cho anh một mô hình mẫu. Chúng tôi dành hai tuần đầu để hiểu studio của anh đang mạnh ở đâu, rồi mới dựng hệ thống quanh điểm mạnh đó."</p>
+      <p class="why">Cụ thể về cách làm, đặt bản sắc khách lên trước, không hứa kết quả chung chung.</p></div>
+    <div class="vbox no"><div class="head">✕ NSC không nói</div>
+      <p>"Với kinh nghiệm dày dạn và đội ngũ chuyên gia hàng đầu, chúng tôi cam kết mang đến giải pháp toàn diện giúp doanh nghiệp bứt phá."</p>
+      <p class="why">Sáo rỗng, không có thông tin, nghe như mọi công ty tư vấn khác.</p></div>
+  </div>
+
+  <div class="vpane" id="v2">
+    <div class="vbox yes"><div class="head">✓ NSC nói</div>
+      <p>"Vấn đề không nằm ở marketing. Studio của anh đang nhận đủ khách, nhưng mỗi khách chỉ mang về một phần ba giá trị lẽ ra phải có. Chỗ rò rỉ nằm ở khâu tư vấn và chính sách bán."</p>
+      <p class="why">Chỉ thẳng, có chẩn đoán, không phán xét người nghe.</p></div>
+    <div class="vbox no"><div class="head">✕ NSC không nói</div>
+      <p>"Anh đang làm sai hết rồi. Cách vận hành thế này thì sớm muộn cũng đóng cửa thôi."</p>
+      <p class="why">Doạ nạt và chê bai. Khách đóng lại ngay, và điều đó không giúp gì cho việc sửa.</p></div>
+  </div>
+
+  <div class="vpane" id="v3">
+    <div class="vbox yes"><div class="head">✓ NSC nói</div>
+      <p>"Gói này gồm ba giai đoạn trong mười hai tuần. Kết thúc, anh có bộ quy trình, bảng giá mới và người của anh vận hành được. Phần NSC không cam kết là doanh thu — đó là kết quả của việc anh chạy đúng hệ thống sau đó."</p>
+      <p class="why">Rõ phạm vi, rõ cái có và cái không có. Trung thực về giới hạn tạo ra tin tưởng.</p></div>
+    <div class="vbox no"><div class="head">✕ NSC không nói</div>
+      <p>"Cam kết tăng doanh thu gấp đôi sau ba tháng, không hiệu quả hoàn tiền 100%."</p>
+      <p class="why">Hứa điều không kiểm soát được. Một lần thất hứa là mất cả uy tín ngành.</p></div>
+  </div>
+
+  <div class="vpane" id="v4">
+    <div class="vbox yes"><div class="head">✓ NSC nói</div>
+      <p>"Việc này NSC làm được, nhưng làm xong studio của anh sẽ giống một studio khác. Nếu anh vẫn muốn hướng đó, NSC xin phép không nhận — và sẵn sàng giới thiệu người phù hợp hơn."</p>
+      <p class="why">Từ chối có lý do, giữ giá trị cốt lõi, vẫn để lại cửa cho khách.</p></div>
+    <div class="vbox no"><div class="head">✕ NSC không nói</div>
+      <p>"Dạ thôi bên em không làm được việc đó ạ."</p>
+      <p class="why">Không giải thích, khách không hiểu vì sao, và NSC mất cơ hội thể hiện lập trường.</p></div>
+  </div>
+
+  <div class="word-cols">
+    <div class="wcol y"><div class="head">✓ Từ NSC dùng</div>
+      <div class="chips"><span class="chip">hệ thống</span><span class="chip">bản sắc</span><span class="chip">bài bản</span><span class="chip">nền tảng</span><span class="chip">đồng hành</span><span class="chip">vận hành</span><span class="chip">quy trình</span><span class="chip">bền</span><span class="chip">đúng</span><span class="chip">nghề</span><span class="chip">dựng</span><span class="chip">chất</span></div>
+    </div>
+    <div class="wcol n"><div class="head">✕ Từ NSC tránh</div>
+      <div class="chips"><span class="chip">bứt phá</span><span class="chip">x10 doanh thu</span><span class="chip">bí kíp</span><span class="chip">thần tốc</span><span class="chip">cam kết hoàn tiền</span><span class="chip">số 1 Việt Nam</span><span class="chip">chuyên gia hàng đầu</span><span class="chip">giải pháp toàn diện</span><span class="chip">đột phá</span></div>
+    </div>
+  </div>
+</section>
+
+
+<div class="rule"></div>
+<!-- ══════════ 06 · LOGO ══════════ -->
+<section id="s6">
+  <div class="sec-head">
+    <div class="sec-tag steel">06 · Logo &amp; Biến thể</div>
+    <h2>Một dấu hiệu, <u>bốn cách dùng</u> được duyệt</h2>
+    <p class="sec-desc">Logo NSC ghép ba thành phần: bánh răng (hệ thống), thân máy ảnh chứa chữ N (nghề), mạch tín hiệu (sự lan toả và kết nối). Thử các biến thể ngay bên dưới.</p>
+  </div>
+
+  <div class="logo-lab">
+    <div class="lab-stage" id="labStage" style="background:#0A0A0A">
+      <div class="lab-logo" id="labLogo" style="color:#C9A84C;--mkw:150px">
+        <div class="safe-ring"></div>
+        <svg class="mk" viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+        <div class="lab-word"><b>NGỌT</b><span>Studio Consultancy</span></div>
+      </div>
+    </div>
+
+    <div class="lab-ctrl">
+      <div class="ctrl-group">
+        <span class="lbl">Nền</span>
+        <div class="swatch-row" id="bgRow">
+          <button class="sw-btn on" style="background:#0A0A0A" data-bg="#0A0A0A" title="Mực Đen"></button>
+          <button class="sw-btn" style="background:#F5F0E8" data-bg="#F5F0E8" title="Kem Cổ Điển"></button>
+          <button class="sw-btn" style="background:#3A4A5C" data-bg="#3A4A5C" title="Xanh Thép"></button>
+          <button class="sw-btn" style="background:#C9A84C" data-bg="#C9A84C" title="Gold"></button>
+          <button class="sw-btn" style="background:#2A4A3A" data-bg="#2A4A3A" title="Lâm Nghiệp"></button>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="lbl">Màu logo</span>
+        <div class="swatch-row" id="fgRow">
+          <button class="sw-btn on" style="background:#C9A84C" data-fg="#C9A84C" title="Gold"></button>
+          <button class="sw-btn" style="background:#F5F0E8" data-fg="#F5F0E8" title="Kem Cổ Điển"></button>
+          <button class="sw-btn" style="background:#0A0A0A" data-fg="#0A0A0A" title="Mực Đen"></button>
+          <button class="sw-btn" style="background:#3A4A5C" data-fg="#3A4A5C" title="Xanh Thép"></button>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="lbl">Dạng</span>
+        <div class="opt-row" id="formRow">
+          <button class="opt on" data-form="mark">Chỉ dấu hiệu</button>
+          <button class="opt" data-form="lock">Lock-up ngang</button>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="lbl">Vùng an toàn</span>
+        <div class="opt-row" id="safeRow">
+          <button class="opt" data-safe="on">Hiện</button>
+          <button class="opt on" data-safe="off">Ẩn</button>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="lbl">Kích thước <span class="size-val" id="sizeVal">150px</span></span>
+        <input type="range" id="sizeRange" min="24" max="260" value="150">
+      </div>
+
+      <div class="ctrl-group">
+        <span class="lbl">Nền khi tải về</span>
+        <div class="opt-row" id="bgModeRow">
+          <button class="opt on" data-bgmode="solid">Theo màu đã chọn</button>
+          <button class="opt" data-bgmode="alpha">Trong suốt</button>
+        </div>
+      </div>
+
+      <div class="ctrl-group">
+        <span class="lbl">Tải về</span>
+        <div class="dl-row" id="dlRow">
+          <button class="dl-btn" data-dl="1000"><b>PNG</b><i>1000px</i></button>
+          <button class="dl-btn" data-dl="2000"><b>PNG</b><i>2000px</i></button>
+          <button class="dl-btn" data-dl="4000"><b>PNG</b><i>4000px</i></button>
+          <button class="dl-btn svg" data-dl="svg"><b>SVG</b><i>vector</i></button>
+        </div>
+        <p class="dl-note">PNG xuất đúng những gì đang hiển thị bên trái, kèm vùng an toàn. SVG giữ nguyên vector để in hoặc phóng to tuỳ ý — phần chữ trong SVG cần máy có sẵn font Playfair Display.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="logo-rules">
+    <div class="lr"><span class="lbl">Vùng an toàn</span><p>Chừa quanh logo tối thiểu <b>1/4 chiều cao logo</b> ở cả bốn cạnh. Không để chữ, ảnh hay viền lọt vào vùng này.</p></div>
+    <div class="lr"><span class="lbl">Kích thước tối thiểu</span><p>Bản số: rộng <b>24px</b>. Bản in: rộng <b>10mm</b>. Nhỏ hơn mức này phần mạch tín hiệu sẽ dính vào nhau.</p></div>
+    <div class="lr"><span class="lbl">Cặp màu ưu tiên</span><p>Gold trên nền Mực Đen là bản dùng nhiều nhất. Mực Đen trên nền Kem dùng cho ấn phẩm in và tài liệu.</p></div>
+    <div class="lr"><span class="lbl">Trên nền ảnh</span><p>Chỉ đặt logo lên vùng ảnh tối và ít chi tiết, dùng bản Kem Cổ Điển. Nếu ảnh rối, thêm lớp phủ đen <b>40%</b>.</p></div>
+  </div>
+
+  <h3 style="margin:44px 0 18px">Những cách dùng bị cấm</h3>
+  <div class="misuse">
+    <div class="mu mu1"><div class="mu-box"><svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg></div><span>Xoay nghiêng logo</span></div>
+    <div class="mu mu2"><div class="mu-box"><svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg></div><span>Kéo giãn sai tỷ lệ</span></div>
+    <div class="mu mu3"><div class="mu-box"><svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg></div><span>Đổi sang màu ngoài palette</span></div>
+    <div class="mu"><div class="mu-box mu4-box"><svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg></div><span>Đặt lên nền cùng tông</span></div>
+    <div class="mu mu5"><div class="mu-box"><svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg></div><span>Thêm đổ bóng, hiệu ứng</span></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+<!-- ══════════ 07 · BẢNG MÀU ══════════ -->
+<section id="s7">
+  <div class="sec-head">
+    <div class="sec-tag steel">07 · Bảng màu</div>
+    <h2>Mười màu, ba nhóm.<br><u>Không có màu thứ mười một.</u></h2>
+    <p class="sec-desc">Nền tối tạo chiều sâu và uy tín, gold là điểm nhấn thương hiệu, xanh thép là màu của hệ thống và phương pháp. <b style="color:var(--cream)">Bấm vào ô màu bất kỳ để copy mã hex.</b></p>
+  </div>
+
+  <div class="pal-title"><b>Nhóm 1</b> · Màu nền tảng — xương sống của mọi ấn phẩm</div>
+  <div class="col-grid">
+    <div class="sw" data-hex="#0A0A0A">
+      <div class="sw-top" style="background:#0A0A0A;color:#F5F0E8"><span class="sw-hex">#0A0A0A</span><span class="sw-copy">Copy</span></div>
+      <div class="sw-info"><div class="sw-name">Mực Đen</div><div class="sw-use">Nền chủ đạo. Chiếm khoảng 60% diện tích mọi ấn phẩm.</div></div>
+    </div>
+    <div class="sw" data-hex="#F5F0E8">
+      <div class="sw-top" style="background:#F5F0E8;color:#0A0A0A"><span class="sw-hex">#F5F0E8</span><span class="sw-copy">Copy</span></div>
+      <div class="sw-info"><div class="sw-name">Kem Cổ Điển</div><div class="sw-use">Chữ chính trên nền tối. Không dùng trắng thuần — kem ấm và dễ nhìn hơn.</div></div>
+    </div>
+    <div class="sw" data-hex="#C9A84C">
+      <div class="sw-top" style="background:#C9A84C;color:#0A0A0A"><span class="sw-hex">#C9A84C</span><span class="sw-copy">Copy</span><span class="sw-badge">Màu thương hiệu</span></div>
+      <div class="sw-info"><div class="sw-name">Gold Chủ Lực</div><div class="sw-use">Logo, điểm nhấn, số liệu. Tối đa 15% diện tích. Không làm màu nền.</div></div>
+    </div>
+    <div class="sw" data-hex="#8A7F74">
+      <div class="sw-top" style="background:#8A7F74;color:#0A0A0A"><span class="sw-hex">#8A7F74</span><span class="sw-copy">Copy</span></div>
+      <div class="sw-info"><div class="sw-name">Xám Ấm</div><div class="sw-use">Chữ phụ, metadata, ngày tháng, chú thích. Không cạnh tranh với headline.</div></div>
+    </div>
+  </div>
+
+  <div class="pal-title"><b>Nhóm 2</b> · Màu nhấn — dùng có liều lượng, không thay màu nền</div>
+  <div class="col-grid">
+    <div class="sw" data-hex="#3A4A5C">
+      <div class="sw-top" style="background:#3A4A5C;color:#F5F0E8"><span class="sw-hex">#3A4A5C</span><span class="sw-copy">Copy</span><span class="sw-badge new">Màu nhấn chính</span></div>
+      <div class="sw-info"><div class="sw-name">Xanh Thép</div><div class="sw-use">Màu nhấn chính. Nền cho sơ đồ, bảng biểu, slide phương pháp. Cảm giác chắc chắn, đáng tin.</div></div>
+    </div>
+    <div class="sw" data-hex="#6E8698">
+      <div class="sw-top" style="background:#6E8698;color:#0A0A0A"><span class="sw-hex">#6E8698</span><span class="sw-copy">Copy</span><span class="sw-badge new">Nhãn &amp; sơ đồ</span></div>
+      <div class="sw-info"><div class="sw-name">Thép Sáng</div><div class="sw-use">Nhãn kỹ thuật, đường kẻ sơ đồ, trạng thái hover, chú thích trong biểu đồ.</div></div>
+    </div>
+    <div class="sw" data-hex="#2A4A3A">
+      <div class="sw-top" style="background:#2A4A3A;color:#F5F0E8"><span class="sw-hex">#2A4A3A</span><span class="sw-copy">Copy</span></div>
+      <div class="sw-info"><div class="sw-name">Lâm Nghiệp</div><div class="sw-use">Nội dung chiều sâu: case study, bài phương pháp, tài liệu dài. Tối đa 1 ấn phẩm mỗi tuần.</div></div>
+    </div>
+    <div class="sw" data-hex="#E8C96A">
+      <div class="sw-top" style="background:#E8C96A;color:#0A0A0A"><span class="sw-hex">#E8C96A</span><span class="sw-copy">Copy</span></div>
+      <div class="sw-info"><div class="sw-name">Gold Nhạt</div><div class="sw-use">Chỉ dùng cho gradient nền rất nhẹ hoặc highlight nhỏ. Không dùng làm nền chính.</div></div>
+    </div>
+  </div>
+
+  <div class="pal-title"><b>Nhóm 3</b> · Màu kỹ thuật — chỉ dùng trong giao diện số</div>
+  <div class="col-grid">
+    <div class="sw" data-hex="#12151A">
+      <div class="sw-top" style="background:#12151A;color:#F5F0E8"><span class="sw-hex">#12151A</span><span class="sw-copy">Copy</span></div>
+      <div class="sw-info"><div class="sw-name">Nền Thẻ</div><div class="sw-use">Nền của card, khối nội dung, bảng. Tối hơi ngả xanh để tách khỏi nền đen.</div></div>
+    </div>
+    <div class="sw" data-hex="#8C6D2A">
+      <div class="sw-top" style="background:#8C6D2A;color:#F5F0E8"><span class="sw-hex">#8C6D2A</span><span class="sw-copy">Copy</span></div>
+      <div class="sw-info"><div class="sw-name">Gold Đậm</div><div class="sw-use">Viền, đường kẻ, trạng thái nhấn của nút gold. Không dùng cho chữ.</div></div>
+    </div>
+  </div>
+
+  <h3 style="margin:44px 0 6px">Cặp màu được duyệt</h3>
+  <p style="color:var(--warm-gray);font-size:14px;margin-bottom:6px">Ngoài bốn cặp này, không tự ghép cặp màu mới.</p>
+  <div class="combo-grid">
+    <div class="combo">
+      <div class="combo-demo" style="background:#0A0A0A"><i style="color:#C9A84C">Tư vấn · phương pháp</i><b style="color:#C9A84C">Hệ thống giữ nghiệp</b></div>
+      <div class="combo-info"><div class="t">Gold trên Mực Đen</div><div class="d">Cặp chủ lực. Dùng cho hầu hết ấn phẩm: cover, slide, post, proposal.</div></div>
+    </div>
+    <div class="combo">
+      <div class="combo-demo" style="background:#F5F0E8"><i style="color:#3A4A5C">Tài liệu · in ấn</i><b style="color:#0A0A0A">Hệ thống giữ nghiệp</b></div>
+      <div class="combo-info"><div class="t">Mực Đen trên Kem</div><div class="d">Ấn phẩm in, hợp đồng, tài liệu dài, namecard mặt sau.</div></div>
+    </div>
+    <div class="combo">
+      <div class="combo-demo" style="background:#3A4A5C"><i style="color:#C9A84C">Sơ đồ · quy trình</i><b style="color:#F5F0E8">Hệ thống giữ nghiệp</b></div>
+      <div class="combo-info"><div class="t">Kem trên Xanh Thép</div><div class="d">Slide phương pháp, sơ đồ vận hành, bảng biểu. Cặp nhận diện riêng của phần nội dung hệ thống.</div></div>
+    </div>
+    <div class="combo">
+      <div class="combo-demo" style="background:#C9A84C"><i style="color:#0A0A0A">Kêu gọi hành động</i><b style="color:#0A0A0A">Đặt lịch tư vấn</b></div>
+      <div class="combo-info"><div class="t">Mực Đen trên Gold</div><div class="d">Chỉ dùng đúng một lần mỗi ấn phẩm: nút hoặc slide cuối kêu gọi hành động.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══════════ 08 · KIỂU CHỮ ══════════ -->
+<section id="s8">
+  <div class="sec-head">
+    <div class="sec-tag steel">08 · Hệ thống kiểu chữ</div>
+    <h2>Ba font, mỗi font một vai trò.<br><u>Không thêm font thứ tư.</u></h2>
+    <p class="sec-desc">Nhất quán trong kiểu chữ là thứ phân biệt một thương hiệu tư vấn chuyên nghiệp với một tài liệu tự làm. NSC dùng nhiều DM Mono cho nhãn kỹ thuật và số liệu.</p>
+  </div>
+
+  <div class="font-card">
+    <div class="font-head"><span class="role">Display · Serif</span><span class="name">Playfair Display</span><span class="meta">Google Fonts · 400 / 700 / 900 / Italic</span></div>
+    <div class="font-demo">
+      <p class="fd-pf">Đam mê dựng nghề,<br><em>hệ thống giữ nghiệp.</em></p>
+    </div>
+    <div class="font-spec"><span class="spec">Dùng cho: <b>Headline, trích dẫn, số lớn</b></span><span class="spec">Cỡ: <b>24 → 80px</b></span><span class="spec">Italic: <b>chỉ cho nhấn mạnh</b></span></div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-head"><span class="role">Body · Sans-serif</span><span class="name">Be Vietnam Pro</span><span class="meta">Google Fonts · 300 / 400 / 500 / 600 / 700</span></div>
+    <div class="font-demo">
+      <p class="fd-bv">Studio của anh đang nhận đủ khách, nhưng mỗi khách chỉ mang về một phần ba giá trị lẽ ra phải có. Chỗ rò rỉ không nằm ở marketing — nó nằm ở khâu tư vấn và chính sách bán.
+      <span class="light">Weight 300 dùng cho chú thích · ngày tháng · số liệu phụ</span></p>
+    </div>
+    <div class="font-spec"><span class="spec">Dùng cho: <b>Nội dung, caption, tiêu đề phụ</b></span><span class="spec">Cỡ: <b>11 → 20px</b></span><span class="spec">Line-height: <b>tối thiểu 1.6</b></span></div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-head"><span class="role">Mono · Nhãn kỹ thuật</span><span class="name">DM Mono</span><span class="meta">Google Fonts · 400 / 500</span></div>
+    <div class="font-demo">
+      <p class="fd-dm">MODULE 03 · VẬN HÀNH &amp; QUY TRÌNH<span>GIAI ĐOẠN 02/04 · TUẦN 5–8 · NGỌT STUDIO CONSULTANCY</span></p>
+    </div>
+    <div class="font-spec"><span class="spec">Dùng cho: <b>Nhãn, số thứ tự, kicker, mã module</b></span><span class="spec">Cỡ: <b>9 → 13px</b></span><span class="spec">Luôn: <b>IN HOA + letter-spacing rộng</b></span></div>
+  </div>
+
+  <div class="scale-box">
+    <div class="scale-ctrl">
+      <label for="scaleRange">Thử thang cỡ chữ</label>
+      <input type="range" id="scaleRange" min="70" max="150" value="100">
+      <output id="scaleOut">100%</output>
+    </div>
+    <div id="scaleBody">
+      <div class="scale-row"><div class="scale-tag">Kicker<span>DM Mono · 11px</span></div><div class="sc-kicker" data-base="11">MODULE 03 · VẬN HÀNH</div></div>
+      <div class="scale-row"><div class="scale-tag">Headline<span>Playfair · 44px</span></div><div class="sc-head" data-base="44">Hệ thống giữ nghiệp</div></div>
+      <div class="scale-row"><div class="scale-tag">Subhead<span>Be Vietnam 600 · 19px</span></div><div class="sc-sub" data-base="19">Vì sao studio đông khách vẫn không đủ tiền trả lương</div></div>
+      <div class="scale-row"><div class="scale-tag">Body<span>Be Vietnam 400 · 15px</span></div><div class="sc-body" data-base="15">Bắt đầu từ bản sắc của chính studio đó, NSC dựng lại sản phẩm, giá, quy trình, nhân sự và dòng tiền thành một hệ thống chạy được mà không cần chủ studio có mặt mọi lúc.</div></div>
+      <div class="scale-row"><div class="scale-tag">Caption<span>Be Vietnam 300 · 12px</span></div><div class="sc-cap" data-base="12">NGỌT — Studio Consultancy · 2026</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+<!-- ══════════ 09 · ỨNG DỤNG ══════════ -->
+<section id="s9">
+  <div class="sec-head">
+    <div class="sec-tag steel">09 · Ứng dụng nhận diện</div>
+    <h2>Bộ nhận diện chỉ có giá trị<br><u>khi nó xuất hiện đúng chỗ</u></h2>
+    <p class="sec-desc">Sáu ứng dụng NSC dùng nhiều nhất. Mỗi mẫu dưới đây là bản dựng thật bằng mã, không phải ảnh — đội ngũ có thể đo trực tiếp tỷ lệ, cỡ chữ và khoảng cách.</p>
+  </div>
+
+  <div class="app-tabs" id="atabs">
+    <button class="vtab on" data-a="a1">Cover fanpage</button>
+    <button class="vtab" data-a="a2">Namecard</button>
+    <button class="vtab" data-a="a3">Slide đề xuất</button>
+    <button class="vtab" data-a="a4">Template post</button>
+    <button class="vtab" data-a="a5">Chữ ký email</button>
+    <button class="vtab" data-a="a6">Bìa proposal</button>
+  </div>
+
+  <div class="apane on" id="a1">
+    <div class="canvas">
+      <div class="cover">
+        <svg class="mk" viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+        <div class="txt">
+          <b>NGỌT</b>
+          <i>Studio Consultancy</i>
+          <p>Đam mê dựng nghề, hệ thống giữ nghiệp.</p>
+          <small>Tư vấn mô hình kinh doanh cho studio · Hà Nội &amp; Phú Thọ</small>
+        </div>
+      </div>
+    </div>
+    <div class="apane-note"><span>Tỷ lệ <b>820 × 312</b></span><span>Nền <b>Mực Đen</b></span><span>Logo <b>Gold</b></span><span>Chừa <b>20% bên phải</b> tránh ảnh đại diện che</span><span>Không đặt chữ sát mép dưới <b>60px</b></span></div>
+  </div>
+
+  <div class="apane" id="a2">
+    <div class="cards2">
+      <div class="canvas"><div class="ncard nc-front">
+        <div class="top">
+          <svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+          <div class="bn"><b>NGỌT</b><i>Studio Consultancy</i></div>
+        </div>
+        <div class="slg">Đam mê dựng nghề,<br>hệ thống giữ nghiệp.</div>
+      </div></div>
+      <div class="canvas"><div class="ncard nc-back">
+        <div class="nm">Đặng Thanh Quang</div>
+        <div class="ro">Founder &amp; Lead Consultant</div>
+        <div class="ln"></div>
+        <div class="ct">
+          <b>0000 000 000</b><br>
+          quang@ngotstudio.vn<br>
+          ngotstudio.vn
+        </div>
+      </div></div>
+    </div>
+    <div class="apane-note"><span>Kích thước <b>85 × 55mm</b></span><span>Mặt trước <b>Mực Đen</b></span><span>Mặt sau <b>Kem Cổ Điển</b></span><span>Gợi ý in: <b>giấy mỹ thuật 350gsm, ép kim gold cho logo</b></span></div>
+  </div>
+
+  <div class="apane" id="a3">
+    <div class="canvas"><div class="slide sl-a">
+      <div class="sl-top">
+        <div class="kk">Module 03 · Vận hành &amp; Quy trình</div>
+        <svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+      </div>
+      <div class="sl-mid">
+        <h5>Bốn giai đoạn để studio<br><em>tự đứng vững</em></h5>
+        <p>Mỗi giai đoạn có đầu ra cụ thể và người chịu trách nhiệm của chính studio, không phụ thuộc vào NSC sau khi dự án kết thúc.</p>
+      </div>
+      <div class="sl-steps">
+        <div class="sl-step"><i>01</i><b>Đo &amp; Hiểu</b></div>
+        <div class="sl-step"><i>02</i><b>Dựng nền</b></div>
+        <div class="sl-step"><i>03</i><b>Chuyển giao</b></div>
+        <div class="sl-step"><i>04</i><b>Chạy độc lập</b></div>
+      </div>
+      <div class="sl-foot"><span>NGỌT — Studio Consultancy</span><span>03 / 24</span></div>
+    </div></div>
+    <div class="apane-note"><span>Tỷ lệ <b>16:9</b></span><span>Lề tối thiểu <b>5% mỗi cạnh</b></span><span>Sơ đồ, bảng biểu dùng nền <b>Xanh Thép</b></span><span>Logo <b>góc trên phải</b>, nhỏ, không cạnh tranh tiêu đề</span></div>
+  </div>
+
+  <div class="apane" id="a4">
+    <div class="posts">
+      <div class="canvas"><div class="post p1">
+        <div class="p-kk" style="color:#C9A84C">Góc nhìn · 01</div>
+        <div class="p-h" style="color:#F5F0E8">Studio đông khách<br>vẫn <span style="color:#C9A84C;font-style:italic">thiếu tiền</span></div>
+        <div class="p-s" style="color:#8A7F74">Vấn đề hiếm khi nằm ở lượng khách.</div>
+        <div class="p-f" style="border-color:rgba(201,168,76,.22)">
+          <svg viewBox="0 0 1077 952" style="color:#C9A84C"><use href="#nsc-mark"/></svg>
+          <span style="color:#8A7F74">NGỌT — Studio Consultancy</span>
+        </div>
+      </div></div>
+
+      <div class="canvas"><div class="post p2">
+        <div class="p-kk" style="color:#C9A84C">Số liệu · Vận hành</div>
+        <div class="p-num" style="margin-top:auto">1/3</div>
+        <div class="p-s" style="color:#F5F0E8;font-size:clamp(10px,2vw,14px)">giá trị mỗi khách hàng bị rơi lại ở khâu tư vấn và chính sách bán.</div>
+        <div class="p-f" style="border-color:rgba(245,240,232,.22)">
+          <svg viewBox="0 0 1077 952" style="color:#F5F0E8"><use href="#nsc-mark"/></svg>
+          <span style="color:rgba(245,240,232,.7)">NGỌT — Studio Consultancy</span>
+        </div>
+      </div></div>
+
+      <div class="canvas"><div class="post p3">
+        <div class="p-kk" style="color:#3A4A5C">Kêu gọi hành động</div>
+        <div class="p-h" style="color:#0A0A0A">Đặt lịch<br>tư vấn <span style="color:#8C6D2A;font-style:italic">1-1</span></div>
+        <div class="p-s" style="color:#5A5048">45 phút, miễn phí, soi đúng chỗ đang rò rỉ.</div>
+        <div class="p-f" style="border-color:rgba(10,10,10,.16)">
+          <svg viewBox="0 0 1077 952" style="color:#0A0A0A"><use href="#nsc-mark"/></svg>
+          <span style="color:#5A5048">NGỌT — Studio Consultancy</span>
+        </div>
+      </div></div>
+    </div>
+    <div class="apane-note"><span>Khổ <b>1080 × 1080</b></span><span>Mỗi bài <b>một điểm nhấn duy nhất</b></span><span>Logo <b>góc dưới trái</b>, luôn có</span><span>Nền sáng <b>tối đa 1 bài / 5 bài</b></span></div>
+  </div>
+
+  <div class="apane" id="a5">
+    <div class="canvas"><div class="esig">
+      <div class="esig-in">
+        <svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+        <div>
+          <div class="nm">Đặng Thanh Quang</div>
+          <div class="ro">Founder &amp; Lead Consultant · NGỌT Studio Consultancy</div>
+          <div class="ct"><b>M</b> 0000 000 000 &nbsp;·&nbsp; <b>E</b> quang@ngotstudio.vn<br><b>W</b> ngotstudio.vn &nbsp;·&nbsp; Hà Nội &amp; Phú Thọ</div>
+          <div class="slg">Đam mê dựng nghề, hệ thống giữ nghiệp.</div>
+        </div>
+      </div>
+    </div></div>
+    <div class="apane-note"><span>Nền <b>Kem Cổ Điển</b> hoặc trắng</span><span>Rộng tối đa <b>520px</b></span><span>Logo <b>66px</b>, luôn bản Mực Đen</span><span>Không chèn ảnh chân dung, không banner quảng cáo</span></div>
+  </div>
+
+  <div class="apane" id="a6">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;max-width:740px">
+      <div class="canvas"><div class="prop">
+        <div class="top">
+          <svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+          <div><b>NGỌT</b><i>Studio Consultancy</i></div>
+        </div>
+        <div class="kk">Đề xuất tư vấn · 2026</div>
+        <h5>Tái cấu trúc mô hình<br>kinh doanh <em>studio</em></h5>
+        <div class="cl">
+          <span>Gửi tới</span>
+          <b>[Tên studio khách hàng]</b>
+        </div>
+        <div class="ft">Đam mê dựng nghề,<br>hệ thống giữ nghiệp.</div>
+      </div></div>
+    </div>
+    <div class="apane-note"><span>Khổ <b>A4 dọc · 210 × 297mm</b></span><span>Viền gold trái <b>6px</b> là dấu hiệu nhận diện bìa</span><span>Tên khách hàng <b>luôn xuất hiện</b> trên bìa</span><span>Slogan đặt <b>cuối trang</b>, không lặp lại ở trang trong</span></div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══════════ 10 · QUY TẮC ══════════ -->
+<section id="s10">
+  <div class="sec-head">
+    <div class="sec-tag steel">10 · Quy tắc bắt buộc</div>
+    <h2>Nhất quán tạo nhận diện.<br><u>Nhận diện tạo tin tưởng.</u></h2>
+    <p class="sec-desc">Với một thương hiệu tư vấn, sự cẩu thả trong ấn phẩm là bằng chứng ngược lại điều mình đang bán. Đây là những điều không được phá vỡ.</p>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rblock">
+      <h4>Màu sắc</h4>
+      <ul>
+        <li>Chỉ dùng <b>10 màu</b> trong bảng ở mục 07. Không thêm màu mới dù thấy đẹp.</li>
+        <li><b>Không lấy màu từ ảnh, template hay ấn phẩm bên ngoài</b> để ghép vào ấn phẩm NSC.</li>
+        <li>Gold không làm nền cho ấn phẩm thường, <b>chỉ dùng cho khối kêu gọi hành động</b>.</li>
+        <li>Không gradient trên chữ. Gradient chỉ dùng cho hiệu ứng nền rất nhẹ.</li>
+        <li><b>80% ấn phẩm trên nền tối</b> (Mực Đen / Xanh Thép / Lâm Nghiệp).</li>
+      </ul>
+    </div>
+
+    <div class="rblock">
+      <h4>Kiểu chữ</h4>
+      <ul>
+        <li>Ba font duy nhất: <b>Playfair Display · Be Vietnam Pro · DM Mono</b>.</li>
+        <li>DM Mono <b>luôn in hoa</b>, letter-spacing tối thiểu 0.16em.</li>
+        <li>Headline tối thiểu <b>24px</b>. Nhỏ hơn không đọc được trên điện thoại.</li>
+        <li>Không quá <b>2 font trong một ấn phẩm</b> — thường là Playfair + Be Vietnam Pro.</li>
+        <li>Line-height nội dung <b>tối thiểu 1.6</b>.</li>
+      </ul>
+    </div>
+
+    <div class="rblock">
+      <h4>Bố cục &amp; khoảng trắng</h4>
+      <ul>
+        <li>Lề tối thiểu <b>5% mỗi cạnh</b>. Chữ chạm viền là dấu hiệu nghiệp dư.</li>
+        <li>Mỗi ấn phẩm có <b>một điểm nhấn duy nhất</b> — headline hoặc con số, không cả hai cùng to.</li>
+        <li>Khoảng trắng là <b>công cụ thiết kế</b>, không phải chỗ trống cần lấp.</li>
+        <li>Logo luôn xuất hiện, <b>nhỏ và ở rìa</b>, không cạnh tranh nội dung.</li>
+        <li>Canh lề <b>nhất quán</b>: trái toàn bộ hoặc giữa toàn bộ, không trộn.</li>
+      </ul>
+    </div>
+
+    <div class="rblock">
+      <h4>Nội dung &amp; số liệu</h4>
+      <ul>
+        <li>Mọi con số đưa ra <b>phải có nguồn thật</b>. Không ước lượng cho đẹp.</li>
+        <li>Không cam kết kết quả nằm ngoài tầm kiểm soát của NSC.</li>
+        <li>Nhắc tên khách hàng hoặc case cụ thể <b>phải có sự đồng ý</b> của họ.</li>
+        <li>Tối đa <b>một con số lớn</b> mỗi ấn phẩm — nhiều số làm loãng thông điệp.</li>
+        <li>Không so sánh trực tiếp, không gọi tên đối thủ trong ngành.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="dd">
+    <div class="ddbox y">
+      <div class="head">✓ Nên làm</div>
+      <ul>
+        <li>Đặt logo gold trên nền Mực Đen cho đa số ấn phẩm</li>
+        <li>Dùng Xanh Thép khi trình bày sơ đồ, quy trình, bảng số</li>
+        <li>Để nhiều khoảng trắng hơn mức thấy cần thiết</li>
+        <li>Viết nhãn kỹ thuật bằng DM Mono in hoa</li>
+        <li>Kiểm tra ấn phẩm trên màn hình điện thoại trước khi đăng</li>
+      </ul>
+    </div>
+    <div class="ddbox n">
+      <div class="head">✕ Không làm</div>
+      <ul>
+        <li>Tự ghép cặp màu mới ngoài bốn cặp đã duyệt ở mục 07</li>
+        <li>Thêm font thứ tư vì thấy hợp mắt</li>
+        <li>Đặt logo lên ảnh nhiều chi tiết mà không có lớp phủ</li>
+        <li>Nhồi hai thông điệp lớn vào cùng một ấn phẩm</li>
+        <li>Dùng emoji trong ấn phẩm chính thức của NSC</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ══════════ 11 · CHECKLIST ══════════ -->
+<section id="s11">
+  <div class="sec-head">
+    <div class="sec-tag steel">11 · Checklist trước khi xuất bản</div>
+    <h2>Tám câu hỏi <u>trước mỗi ấn phẩm</u></h2>
+    <p class="sec-desc">Bấm để tick. Chưa đủ tám dấu thì ấn phẩm chưa ra khỏi cửa.</p>
+  </div>
+
+  <div class="ck-wrap">
+    <div class="ck-bar"><div class="ck-fill" id="ckFill"></div></div>
+    <div class="ck-meta">
+      <div class="n">Đã kiểm: <b id="ckNum">0</b> / 8</div>
+      <button class="opt" id="ckReset">Đặt lại</button>
+    </div>
+
+    <div class="ck-list" id="ckList">
+      <div class="ck"><div class="ck-box">✓</div><div class="ck-txt"><b>Màu có nằm trong bảng 10 màu không?</b><span>Không có màu nào lấy từ ngoài bảng, kể cả màu trông gần giống.</span></div></div>
+      <div class="ck"><div class="ck-box">✓</div><div class="ck-txt"><b>Chỉ dùng ba font đã duyệt?</b><span>Playfair Display, Be Vietnam Pro, DM Mono — không có font thứ tư.</span></div></div>
+      <div class="ck"><div class="ck-box">✓</div><div class="ck-txt"><b>Logo có đủ vùng an toàn và đúng biến thể?</b><span>Chừa 1/4 chiều cao logo mỗi cạnh, màu logo hợp với nền.</span></div></div>
+      <div class="ck"><div class="ck-box">✓</div><div class="ck-txt"><b>Ấn phẩm có đúng một điểm nhấn không?</b><span>Nếu có hai thứ cùng to, người xem sẽ không nhớ thứ nào.</span></div></div>
+      <div class="ck"><div class="ck-box">✓</div><div class="ck-txt"><b>Mọi con số đều có nguồn thật?</b><span>Không có số nào là ước lượng cho đẹp.</span></div></div>
+      <div class="ck"><div class="ck-box">✓</div><div class="ck-txt"><b>Giọng văn có đúng NSC không?</b><span>Điềm, thẳng, cụ thể — không sáo rỗng, không doạ nạt, không hứa quá.</span></div></div>
+      <div class="ck"><div class="ck-box">✓</div><div class="ck-txt"><b>Đã xem trên màn hình điện thoại chưa?</b><span>Chữ nhỏ nhất vẫn đọc được, logo vẫn nhận ra.</span></div></div>
+      <div class="ck"><div class="ck-box">✓</div><div class="ck-txt"><b>Đặt cạnh ấn phẩm NSC tuần trước có thấy cùng một hệ không?</b><span>Nếu hai ấn phẩm liền nhau trông như hai thương hiệu, có gì đó đã lệch.</span></div></div>
+    </div>
+
+    <div class="ck-done-msg" id="ckDone">Đủ tám dấu. Ấn phẩm được phép xuất bản.</div>
+  </div>
+</section>
+
+
+<footer>
+  <svg viewBox="0 0 1077 952"><use href="#nsc-mark"/></svg>
+  <div class="f-txt"><b>NGỌT — Studio Consultancy</b><span>Hướng dẫn sử dụng nhận diện · Phiên bản 1.0 · 2026</span></div>
+  <div class="f-slg">Đam mê dựng nghề, hệ thống giữ nghiệp.<span>Tài liệu nội bộ · dành cho đội ngũ</span></div>
+</footer>
+
+<div id="toast">Đã copy</div>
+<button class="top-btn" id="topBtn" aria-label="Lên đầu trang">↑</button>
+
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)};
+  var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+  var toast=$('#toast'),tT;
+  function say(m){if(!toast)return;toast.textContent=m;toast.classList.add('show');clearTimeout(tT);
+    tT=setTimeout(function(){toast.classList.remove('show')},1600)}
+
+  var burger=$('#burger'),navScroll=$('#navScroll');
+  if(burger&&navScroll){
+    burger.addEventListener('click',function(){navScroll.classList.toggle('show')});
+    $$('#navScroll a').forEach(function(a){a.addEventListener('click',function(){navScroll.classList.remove('show')})});
+  }
+  var secs=$$('section[id]'),links=$$('#navScroll a'),topBtn=$('#topBtn');
+  function syncNav(){
+    var y=window.scrollY+120,cur='';
+    secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+    if(topBtn)topBtn.classList.toggle('show',window.scrollY>600);
+  }
+  window.addEventListener('scroll',syncNav,{passive:true});syncNav();
+  if(topBtn)topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+  $$('#vtabs .vtab').forEach(function(b){
+    b.addEventListener('click',function(){
+      $$('#vtabs .vtab').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+      $$('.vpane').forEach(function(p){p.classList.remove('on')});
+      var t=$('#'+b.dataset.v); if(t)t.classList.add('on');
+    });
+  });
+
+  var stage=$('#labStage'),logo=$('#labLogo');
+  if(stage&&logo){
+    var bgHex='#0A0A0A',fgHex='#C9A84C',alphaBg=false;
+
+    $$('#bgRow .sw-btn').forEach(function(b){
+      b.addEventListener('click',function(){
+        $$('#bgRow .sw-btn').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');bgHex=b.dataset.bg;
+        if(!alphaBg)stage.style.background=bgHex;
+      });
+    });
+    $$('#fgRow .sw-btn').forEach(function(b){
+      b.addEventListener('click',function(){
+        $$('#fgRow .sw-btn').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');fgHex=b.dataset.fg;logo.style.color=fgHex;
+      });
+    });
+    $$('#formRow .opt').forEach(function(b){
+      b.addEventListener('click',function(){
+        $$('#formRow .opt').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');logo.classList.toggle('lock',b.dataset.form==='lock');
+      });
+    });
+    $$('#safeRow .opt').forEach(function(b){
+      b.addEventListener('click',function(){
+        $$('#safeRow .opt').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');logo.classList.toggle('safe',b.dataset.safe==='on');
+      });
+    });
+    $$('#bgModeRow .opt').forEach(function(b){
+      b.addEventListener('click',function(){
+        $$('#bgModeRow .opt').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');
+        alphaBg=(b.dataset.bgmode==='alpha');
+        if(alphaBg){stage.classList.add('alpha');stage.style.background='';}
+        else{stage.classList.remove('alpha');stage.style.background=bgHex;}
+      });
+    });
+    var sr=$('#sizeRange'),sv=$('#sizeVal');
+    if(sr)sr.addEventListener('input',function(){
+      logo.style.setProperty('--mkw',sr.value+'px');sv.textContent=sr.value+'px';
+    });
+
+    /* ── đo khối logo đang hiển thị ── */
+    function measure(){
+      var lock=logo.classList.contains('lock');
+      var mk=logo.querySelector('svg.mk'),mkR=mk.getBoundingClientRect();
+      var box={x:mkR.left,y:mkR.top,r:mkR.right,b:mkR.bottom};
+      var bEl=null,sEl=null;
+      if(lock){
+        bEl=logo.querySelector('.lab-word b');sEl=logo.querySelector('.lab-word span');
+        [bEl,sEl].forEach(function(el){
+          var r=el.getBoundingClientRect();
+          box.x=Math.min(box.x,r.left);box.y=Math.min(box.y,r.top);
+          box.r=Math.max(box.r,r.right);box.b=Math.max(box.b,r.bottom);
+        });
+      }
+      var pad=mkR.height*0.25;
+      return {lock:lock,mkR:mkR,bEl:bEl,sEl:sEl,box:box,pad:pad,
+        w:(box.r-box.x)+pad*2,h:(box.b-box.y)+pad*2,
+        logoR:logo.getBoundingClientRect()};
+    }
+    function markPath(){return document.querySelector('#nsc-mark path').getAttribute('d')}
+
+    function drawPng(targetW,cb){
+      var m=measure();
+      var s=targetW/m.w;
+      var cv=document.createElement('canvas');
+      cv.width=Math.round(m.w*s);cv.height=Math.round(m.h*s);
+      var ctx=cv.getContext('2d');
+      if(!alphaBg){ctx.fillStyle=bgHex;ctx.fillRect(0,0,cv.width,cv.height)}
+      ctx.scale(s,s);
+      ctx.translate(m.pad-m.box.x,m.pad-m.box.y);
+      /* dấu hiệu */
+      ctx.save();
+      ctx.fillStyle=fgHex;
+      ctx.translate(m.mkR.left,m.mkR.top);
+      var k=m.mkR.width/1077;ctx.scale(k,k);
+      ctx.translate(0,952);ctx.scale(0.1,-0.1);
+      ctx.fill(new Path2D(markPath()));
+      ctx.restore();
+      if(m.lock){
+        /* đường phân cách */
+        var dx=m.logoR.left+m.mkR.width+10;
+        ctx.save();ctx.globalAlpha=.3;ctx.fillStyle=fgHex;
+        ctx.fillRect(dx,m.logoR.top+m.logoR.height*.08,1,m.logoR.height*.84);
+        ctx.restore();
+        /* NGỌT */
+        var cb1=getComputedStyle(m.bEl),r1=m.bEl.getBoundingClientRect();
+        ctx.fillStyle=fgHex;ctx.textBaseline='middle';ctx.textAlign='left';
+        ctx.font=cb1.fontStyle+' '+cb1.fontWeight+' '+cb1.fontSize+' '+cb1.fontFamily;
+        ctx.fillText(m.bEl.textContent,r1.left,r1.top+r1.height/2);
+        /* dòng mono có letter-spacing */
+        var cs2=getComputedStyle(m.sEl),r2=m.sEl.getBoundingClientRect();
+        var ls=parseFloat(cs2.letterSpacing)||0;
+        ctx.globalAlpha=.8;
+        ctx.font=cs2.fontStyle+' '+cs2.fontWeight+' '+cs2.fontSize+' '+cs2.fontFamily;
+        var t=m.sEl.textContent.toUpperCase(),x=r2.left,y=r2.top+r2.height/2;
+        for(var i=0;i<t.length;i++){ctx.fillText(t[i],x,y);x+=ctx.measureText(t[i]).width+ls}
+        ctx.globalAlpha=1;
+      }
+      cv.toBlob(cb,'image/png');
+    }
+
+    function esc(t){return String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+    function buildSvg(){
+      var m=measure(),o=[];
+      var W=Math.round(m.w),H=Math.round(m.h);
+      o.push('<?xml version="1.0" encoding="UTF-8"?>');
+      o.push('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'">');
+      if(!alphaBg)o.push('<rect width="'+W+'" height="'+H+'" fill="'+bgHex+'"/>');
+      o.push('<g transform="translate('+(m.pad-m.box.x).toFixed(2)+','+(m.pad-m.box.y).toFixed(2)+')">');
+      var k=(m.mkR.width/1077).toFixed(6);
+      o.push('<g transform="translate('+m.mkR.left.toFixed(2)+','+m.mkR.top.toFixed(2)+') scale('+k+') translate(0,952) scale(0.1,-0.1)" fill="'+fgHex+'">');
+      o.push('<path d="'+markPath()+'"/></g>');
+      if(m.lock){
+        var dx=(m.logoR.left+m.mkR.width+10).toFixed(2);
+        o.push('<rect x="'+dx+'" y="'+(m.logoR.top+m.logoR.height*.08).toFixed(2)+'" width="1" height="'+(m.logoR.height*.84).toFixed(2)+'" fill="'+fgHex+'" opacity="0.3"/>');
+        var c1=getComputedStyle(m.bEl),r1=m.bEl.getBoundingClientRect();
+        o.push('<text x="'+r1.left.toFixed(2)+'" y="'+(r1.top+r1.height/2).toFixed(2)+'" dominant-baseline="central" font-family="Playfair Display, Georgia, serif" font-weight="'+c1.fontWeight+'" font-size="'+parseFloat(c1.fontSize).toFixed(2)+'" fill="'+fgHex+'">'+esc(m.bEl.textContent)+'</text>');
+        var c2=getComputedStyle(m.sEl),r2=m.sEl.getBoundingClientRect();
+        o.push('<text x="'+r2.left.toFixed(2)+'" y="'+(r2.top+r2.height/2).toFixed(2)+'" dominant-baseline="central" font-family="DM Mono, Menlo, monospace" font-weight="'+c2.fontWeight+'" font-size="'+parseFloat(c2.fontSize).toFixed(2)+'" letter-spacing="'+(parseFloat(c2.letterSpacing)||0).toFixed(2)+'" fill="'+fgHex+'" opacity="0.8">'+esc(m.sEl.textContent.toUpperCase())+'</text>');
+      }
+      o.push('</g></svg>');
+      return o.join('');
+    }
+
+    function save(blob,name){
+      var a=document.createElement('a');
+      a.href=URL.createObjectURL(blob);a.download=name;
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+      setTimeout(function(){URL.revokeObjectURL(a.href)},1200);
+    }
+    function fileName(ext,w){
+      var form=logo.classList.contains('lock')?'lockup':'mark';
+      var bg=alphaBg?'trong-suot':bgHex.replace('#','').toLowerCase();
+      return 'ngot-sc-logo-'+form+'-'+fgHex.replace('#','').toLowerCase()+'-nen-'+bg+(w?'-'+w:'')+'.'+ext;
+    }
+
+    $$('#dlRow .dl-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var v=btn.dataset.dl;
+        if(v==='svg'){
+          save(new Blob([buildSvg()],{type:'image/svg+xml'}),fileName('svg'));
+          say('Đã tải bản SVG');return;
+        }
+        btn.classList.add('busy');
+        var go=function(){
+          drawPng(parseInt(v,10),function(blob){
+            btn.classList.remove('busy');
+            if(!blob){say('Trình duyệt không tạo được ảnh');return}
+            save(blob,fileName('png',v));say('Đã tải PNG '+v+'px');
+          });
+        };
+        if(document.fonts&&document.fonts.ready)document.fonts.ready.then(go);else go();
+      });
+    });
+  }
+
+  function fallback(t){
+    var ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');say('Đã copy '+t)}catch(e){say(t)}
+    document.body.removeChild(ta);
+  }
+  $$('.sw').forEach(function(s){
+    s.addEventListener('click',function(){
+      var hex=s.dataset.hex;
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(hex).then(function(){say('Đã copy '+hex)},function(){fallback(hex)});
+      }else fallback(hex);
+    });
+  });
+
+  var scr=$('#scaleRange'),sco=$('#scaleOut');
+  if(scr){
+    var applyScale=function(){
+      var f=parseInt(scr.value,10)/100;sco.textContent=scr.value+'%';
+      $$('#scaleBody [data-base]').forEach(function(el){
+        el.style.fontSize=(parseFloat(el.dataset.base)*f).toFixed(1)+'px';
+      });
+    };
+    scr.addEventListener('input',applyScale);applyScale();
+  }
+
+  $$('#atabs .vtab').forEach(function(b){
+    b.addEventListener('click',function(){
+      $$('#atabs .vtab').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on');
+      $$('.apane').forEach(function(p){p.classList.remove('on')});
+      var t=$('#'+b.dataset.a); if(t)t.classList.add('on');
+    });
+  });
+
+  var cks=$$('#ckList .ck'),fill=$('#ckFill'),num=$('#ckNum'),done=$('#ckDone');
+  if(cks.length){
+    var syncCk=function(){
+      var n=$$('#ckList .ck.done').length;
+      num.textContent=n;fill.style.width=(n/cks.length*100)+'%';
+      done.classList.toggle('show',n===cks.length);
+    };
+    cks.forEach(function(c){c.addEventListener('click',function(){c.classList.toggle('done');syncCk()})});
+    var rs=$('#ckReset');
+    if(rs)rs.addEventListener('click',function(){
+      cks.forEach(function(c){c.classList.remove('done')});syncCk();say('Đã đặt lại checklist');
+    });
+    syncCk();
+  }
+
+})();
+</script>
+
+</body>
+</html>
